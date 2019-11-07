@@ -1,12 +1,14 @@
 #include<iostream>
 #include<string>
 #include<fstream>
+#include<iomanip>
 
 using namespace std;
 int Size = 2;
 
 struct Patient {
 
+	int id;
 	string name;
 	string surname;
 	string date_of_receipt;
@@ -20,6 +22,7 @@ struct Patient {
 
 	void ShowData()
 	{
+		cout << " ID patient: " << id << endl;
 		cout << " Name: " << name << endl;
 		cout << " Surname: " << surname << endl;
 		cout << " Data of receipt: " << date_of_receipt << endl;
@@ -44,7 +47,7 @@ struct Doctor {
 	{
 		cout << " Name: " << name << endl;
 		cout << " Surname: " << surname << endl;
-		cout << " Palata # [ " << palata <<" ]"<< endl;
+		cout << " Palata # [ " << palata << " ]" << endl;
 	}
 };
 
@@ -66,6 +69,9 @@ void Fill_Data(Patient*& data, string path)
 
 
 		for (int i = 0; i < Size; i++) {
+
+			readFile.getline(tmp, 255);
+			data[i].id = atoi(tmp);
 
 			readFile.getline(tmp, 255);
 			data[i].name = tmp;
@@ -149,6 +155,7 @@ void Save_Data(string path, Patient*& data)
 		writeFile << Size << endl;
 		for (int i = 0; i < Size; i++)
 		{
+			writeFile << data[i].id << endl;
 			writeFile << data[i].name << endl;
 			writeFile << data[i].surname << endl;
 			writeFile << data[i].date_of_receipt << endl;
@@ -157,6 +164,8 @@ void Save_Data(string path, Patient*& data)
 			writeFile << data[i].palata << endl;
 			writeFile << data[i].insurance_policy << endl;
 			writeFile << data[i].cost_of_treatment << endl;
+			writeFile << data[i].date_of_discharge << endl;
+			writeFile << data[i].year_of_discharge << endl;
 		}
 	}
 	writeFile.close();
@@ -165,8 +174,8 @@ void Save_Data(string path, Patient*& data)
 
 void Print_Data(Patient* data)
 {
-	for (int i = 0; i < Size; i++){
-		cout << "Id [ " << i + 1 << " ]" << endl;
+	for (int i = 0; i < Size; i++) {
+		cout << "Id [ " << data[i].id << " ]" << endl;
 		data[i].ShowData();
 		cout << "\n__________________________________" << endl;
 	}
@@ -174,14 +183,15 @@ void Print_Data(Patient* data)
 
 void Print_Doc(Doctor* doc)
 {
-	for (int i = 0; i < 3; i++){
+	for (int i = 0; i < 3; i++) {
 		doc[i].ShowData();
 		cout << "\n__________________________________" << endl;
 	}
 }
 
-void Data_overwrite(Patient & data1, Patient data2) //перезапис данних
+void Data_overwrite(Patient & data1, Patient data2) //ГЇГҐГ°ГҐГ§Г ГЇГЁГ± Г¤Г Г­Г­ГЁГµ
 {
+	data1.id = data2.id;
 	data1.name = data2.name;
 	data1.surname = data2.surname;
 	data1.date_of_receipt = data2.date_of_receipt;
@@ -196,14 +206,14 @@ void Data_overwrite(Patient & data1, Patient data2) //перезапис данних
 
 void Add_Patient(Patient*& data, Patient data2)
 {
-	Patient *newData = new Patient[Size+1];
+	Patient *newData = new Patient[Size + 1];
 
 	for (int i = 0; i < Size; i++)
 	{
 		Data_overwrite(newData[i], data[i]);
 	}
 	Data_overwrite(newData[Size], data2);
-	
+
 	delete[] data;
 	data = newData;
 	Size++;
@@ -220,7 +230,7 @@ void Delete_data(Patient*& data, int id)
 	}
 	for (int i = id + 1; i < Size; i++)
 	{
-		Data_overwrite(newData[i-1], data[i]);
+		Data_overwrite(newData[i - 1], data[i]);
 	}
 	delete[] data;
 	data = newData;
@@ -228,55 +238,71 @@ void Delete_data(Patient*& data, int id)
 
 }
 
-//void Edit_data(Patient*& data, int id, string path)
-//{
-//	char input;
-//	string name;
-//	Patient data3;
-//	cout << "\tPatient ID >>> " << id << endl;
-//		
-//		cout << "To edit name                >>> enter [n]" << endl;
-//		cout << "To edit surname             >>> enter [s]" << endl;
-//		cout << "To edit Data of receipt     >>> enter [d]" << endl;
-//		cout << "to edit Diagnosis:          >>> enter [i]" << endl;
-//		cout << "To edit Healing:            >>> enter [h]" << endl;
-//		cout << "To edit Palata:             >>> enter [p]" << endl;
-//		cout << "To edit Insurance policy:   >>> enter [o]" << endl;
-//		cout << "To edit Coust of treatment: >>> enter [c]" << endl;
-//		cout << "Enter choice: ";
-//		cin >> input;
-//
-//		
-//
-//		if (input == 'n')
-//		{
-//			cout << " Please enter the patient's name: ";
-//
-//			cin >> data3.name;
-//			
-//			//data[id].name = data3.name;
-//			
-//					
-//		}
-//		else if (input == 's')
-//		{
-//			cout << " Please enter the patient's surname: ";
-//			
-//			
-//
-//		}
-//		
-//		
-//		Save_Data(path, data);
-//}
-//
-//
-//
-//
-//
+void Serch_data(Patient* data, int id)
+{
+	bool exit = false;
 
+	for (int i = 0; i < Size; i++)
+	{
+		if (data[i].id == id)
+		{
+			exit = true;
+			data[i].ShowData();
+			cout << "\n\n";
+		}
+	}
 
+	if (!exit)
+	{
+		cout << " No serch patient with this >>> " << id << " ID." << endl;
+	}
+}
 
+void Serch_in_palata(Patient *data, int palata, Doctor *doc)
+{
+	bool exit = false;
+	int index=0;
+
+	for (int i = 0; i < Size; i++)
+	{
+		if (data[i].palata == palata)
+		{
+			index++;
+			exit = true;
+			cout << "\n Doctor in palata: " << doc[i].name << " " << doc[i].surname << endl;
+			cout <<" [ "<< index << " ] patient in palata\n\n";
+		
+
+			cout << "Name" << setw(20) << "Diagnosis" << setw(10) << "Healing" << setw(20) << "\n"<<"__________________________________________\n\n";
+
+			for (int i = 0; i < index; i++)
+			{
+				cout << data[i].name << " " << data[i].surname << setw(5) <<"|"<< data[i].diagnosis << setw(15) << data[i].healing << endl;
+			}
+
+			
+		}
+	}
+
+	if (!exit)
+	{
+		cout << "No serch palata #" << palata << endl;
+	}
+}
+
+void Table_patient(Patient *data)
+{
+	cout << "Palata" << setw(10) << "Name" << setw(15) << "Surname" << setw(20) << "Data of receipt" << setw(15) << "Diagnosis" << setw(15) << "Healing" << setw(20) << "Insurance policy" << setw(20)
+		<< "Coust of treatment" <<
+		setw(20) << "Date of discharge\n" << "______________________________________________________________________________________________________________________________________________"<<endl;
+
+	for (int i = 0; i < Size; i++)
+	{
+		cout <<"  ["<< data[i].palata<<"]" << setw(10) << data[i].name << setw(15) << data[i].surname << setw(18) << data[i].date_of_receipt<<setw(15) << data[i].diagnosis << setw(15)
+			<< data[i].healing <<
+			setw(20) << data[i].insurance_policy << setw(15) << data[i].cost_of_treatment << setw(15) << data[i].date_of_discharge << "." << data[i].year_of_discharge << endl;
+	}
+}
 int main()
 {
 	Patient *data;
@@ -286,13 +312,15 @@ int main()
 	string path2 = "doc.txt";
 	Fill_Data(data, path);
 	Fill_Doc(doc, path2);
-	
+
 	int choise = 0;
 	bool exit = false;
 	int id = 0;
-	
+	int palata = 0;
+
+
 	while (!exit) {
-		
+
 		cout << " ____________" << endl;
 		cout << " ____Menu____" << endl;
 		cout << " ____________\n" << endl;
@@ -302,46 +330,52 @@ int main()
 		cout << "\t 3. All patient.\n" << endl;
 		cout << "\t 4. Save data.\n" << endl;
 		cout << "\t 5. Doc data.\n" << endl;
+		cout << "\t 6. Serch data.\n" << endl;
+		cout << "\t 7. Patient in palata.\n" << endl;
+		cout << "\t 8. Table patient.\n" << endl;
 		cout << "\t 0. Exit.\n" << endl;
 
-		
+
 		cout << "Enter your choise:";
 		cin >> choise;
-		
-	switch(choise) {
 
-		case 1: 
-			
+		switch (choise) {
+
+		case 1:
+
 			cout << " Add new patient: " << endl;
-				cout << " Name: ";
-				cin >> data2.name;
-				
-				cout << " Surname: ";
-				cin >> data2.surname;
-				
-				cout << " Data of receipt: ";
-				cin >> data2.date_of_receipt;
-				
-				cout << " Diagnosis: ";
-				cin >> data2.diagnosis;
-				
-				cout << " Healing: ";
-				cin >> data2.healing;
-			
-				cout << " Palata: ";
-				cin >> data2.palata;
-				
-				cout << " Insurance policy: ";
-				cin >> data2.insurance_policy;
-				
-				cout << " Coust of treatment: ";
-				cin >> data2.cost_of_treatment;
+			cout << " ID: ";
+			cin >> data2.id;
 
-				cout << " Date of discharge (day.months): ";
-				cin >> data2.date_of_discharge;
+			cout << " Name: ";
+			cin >> data2.name;
 
-				cout << " Year of discharge: ";
-				cin >> data2.year_of_discharge;
+			cout << " Surname: ";
+			cin >> data2.surname;
+
+			cout << " Data of receipt: ";
+			cin >> data2.date_of_receipt;
+
+			cout << " Diagnosis: ";
+			cin >> data2.diagnosis;
+
+			cout << " Healing: ";
+			cin >> data2.healing;
+
+			cout << " Palata: ";
+			cin >> data2.palata;
+
+			cout << " Insurance policy: ";
+			cin >> data2.insurance_policy;
+
+			cout << " Coust of treatment: ";
+			cin >> data2.cost_of_treatment;
+
+			cout << " Date of discharge (day.months): ";
+			cin >> data2.date_of_discharge;
+
+			cout << " Year of discharge: ";
+			cin >> data2.year_of_discharge;
 
 			Add_Patient(data, data2);
 			break;
@@ -367,15 +401,29 @@ int main()
 			cout << "\n__________________________________" << endl;
 			Print_Doc(doc);
 			break;
-	
+		case 6:
+			cout << "\n____________________________________" << endl;
+			cout << "Enter id patient to serch:";
+			cin >> id;
+			Serch_data(data, id);
+			break;
+		case 7:
+			cout << "\n_____________________________________" << endl;
+			cout << "Enter # palata: ";
+			cin >> palata;
+			Serch_in_palata(data, palata, doc);
+			break;
+		case 8:
+			Table_patient(data);
+			break;
 		case 0:
 			exit = true;
 			break;
 		}
-		
+
 	}
 	cout << "_______________________________" << endl;
-	
+
 
 	system("pause");
 	return 0;
