@@ -2,6 +2,7 @@
 #include<string>
 #include<fstream>
 #include<iomanip>
+#include<conio.h>
 
 using namespace std;
 int Size = 2;
@@ -200,7 +201,7 @@ void Print_Doc(Doctor* doc)
 	}
 }
 
-void Data_overwrite(Patient & data1, Patient data2) //ïåðåçàïèñ äàííèõ
+void Data_overwrite(Patient & data1, Patient data2) 
 {
 	data1.id = data2.id;
 	data1.name = data2.name;
@@ -236,15 +237,15 @@ void Add_Patient(Patient*& data, Patient data2)
 
 void Delete_data(Patient*& data, int id)
 {
-	Patient* newData = new Patient[Size];
+	Patient* newData = new Patient[Size-1];
 
 	for (int i = 0; i < id; i++)
 	{
 		Data_overwrite(newData[i], data[i]);
 	}
-	for (int i = id + 1; i < Size; i++)
+	for (int i = id+1 ; i < Size; i++)
 	{
-		Data_overwrite(newData[i - 1], data[i]);
+		Data_overwrite(newData[i-1], data[i]);
 	}
 	delete[] data;
 	data = newData;
@@ -393,6 +394,456 @@ void List_written_out(Patient *data)
 
 }
 
+void Delete_patient_discharge_last_year(Patient *data)
+{
+	int id = 0;
+	for (int i = 0; i < Size; i++)
+	{
+		if (data[i].year_of_discharge <= 2018)
+		{
+			id = data[i].id;
+			Delete_data(data, id);
+			
+		}
+	}
+
+
+}
+
+void Coust_treatment(Patient *data)
+{
+	int id=0;
+	int tmp = 0;
+	cout << "Enter ID patient: ";
+	cin >> id;
+
+	for (int i = 0; i < Size; i++)
+	{
+		if (data[i].id == id)
+		{
+			tmp++;
+			cout << " Name: " << data[i].name << " " << data[i].surname << endl;
+			cout << " You mast pay: " << data[i].cost_of_treatment << endl;
+		}	
+	}
+
+	if (tmp == 0)
+	{
+		cout << "No patient ID " << id << endl;
+	}
+
+}
+
+struct Menu
+{
+	void HomeScr()
+	{
+		system("cls");
+		cout << endl;
+		cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+		cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+		cout << "\n\n\n\n";
+		cout << "\n \t \t \t \t \t \t Add patient";
+		cout << "\n \t \t \t \t \t \t Delete patient";
+		cout << "\n \t \t \t \t \t \t All patient";
+		cout << "\n \t \t \t \t \t \t Save data";
+		cout << "\n \t \t \t \t \t \t Doc data";
+		cout << "\n \t \t \t \t \t \t Serch data";
+		cout << "\n \t \t \t \t \t \t Patient in palata";
+		cout << "\n \t \t \t \t \t \t Table patient";
+		cout << "\n \t \t \t \t \t \t Sort by diagnosis";
+		cout << "\n \t \t \t \t \t \t Sample";
+		cout << "\n \t \t \t \t \t \t List written out";
+		cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
+		cout << "\n \t \t \t \t \t \t Coust treatment";
+		cout << "\n \t \t \t \t \t \t Exit";
+	}
+	void HomeScr1()
+	{
+		system("cls");
+		cout << endl;
+		cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+		cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+		cout << "\n\n\n\n";
+		cout << "\n \t \t \t \t \t |-->>:>>Add patient";
+		cout << "\n \t \t \t \t \t \t Delete patient";
+		cout << "\n \t \t \t \t \t \t All patient";
+		cout << "\n \t \t \t \t \t \t Save data";
+		cout << "\n \t \t \t \t \t \t Doc data";
+		cout << "\n \t \t \t \t \t \t Serch data";
+		cout << "\n \t \t \t \t \t \t Patient in palata";
+		cout << "\n \t \t \t \t \t \t Table patient";
+		cout << "\n \t \t \t \t \t \t Sort by diagnosis";
+		cout << "\n \t \t \t \t \t \t Sample";
+		cout << "\n \t \t \t \t \t \t List written out";
+		cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
+		cout << "\n \t \t \t \t \t \t Coust treatment";
+		cout << "\n \t \t \t \t \t \t Exit";
+	}
+	void HomeScr2()
+	{
+		system("cls");
+		cout << endl;
+		cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+		cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+		cout << "\n\n\n\n";
+		cout << "\n \t \t \t \t \t \t Add patient";
+		cout << "\n \t \t \t \t \t |-->>:>>Delete patient";
+		cout << "\n \t \t \t \t \t \t All patient";
+		cout << "\n \t \t \t \t \t \t Save data";
+		cout << "\n \t \t \t \t \t \t Doc data";
+		cout << "\n \t \t \t \t \t \t Serch data";
+		cout << "\n \t \t \t \t \t \t Patient in palata";
+		cout << "\n \t \t \t \t \t \t Table patient";
+		cout << "\n \t \t \t \t \t \t Sort by diagnosis";
+		cout << "\n \t \t \t \t \t \t Sample";
+		cout << "\n \t \t \t \t \t \t List written out";
+		cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
+		cout << "\n \t \t \t \t \t \t Coust treatment";
+		cout << "\n \t \t \t \t \t \t Exit";
+	}
+	void HomeScr3()
+	{
+		system("cls");
+		cout << endl;
+		cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+		cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+		cout << "\n\n\n\n";
+		cout << "\n \t \t \t \t \t \t Add patient";
+		cout << "\n \t \t \t \t \t \t Delete patient";
+		cout << "\n \t \t \t \t \t |-->>:>>All patient";
+		cout << "\n \t \t \t \t \t \t Save data";
+		cout << "\n \t \t \t \t \t \t Doc data";
+		cout << "\n \t \t \t \t \t \t Serch data";
+		cout << "\n \t \t \t \t \t \t Patient in palata";
+		cout << "\n \t \t \t \t \t \t Table patient";
+		cout << "\n \t \t \t \t \t \t Sort by diagnosis";
+		cout << "\n \t \t \t \t \t \t Sample";
+		cout << "\n \t \t \t \t \t \t List written out";
+		cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
+		cout << "\n \t \t \t \t \t \t Coust treatment";
+		cout << "\n \t \t \t \t \t \t Exit";
+	}
+	void HomeScr4()
+	{
+		system("cls");
+		cout << endl;
+		cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+		cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+		cout << "\n\n\n\n";
+		cout << "\n \t \t \t \t \t \t Add patient";
+		cout << "\n \t \t \t \t \t \t Delete patient";
+		cout << "\n \t \t \t \t \t \t All patient";
+		cout << "\n \t \t \t \t \t |-->>:>>Save data";
+		cout << "\n \t \t \t \t \t \t Doc data";
+		cout << "\n \t \t \t \t \t \t Serch data";
+		cout << "\n \t \t \t \t \t \t Patient in palata";
+		cout << "\n \t \t \t \t \t \t Table patient";
+		cout << "\n \t \t \t \t \t \t Sort by diagnosis";
+		cout << "\n \t \t \t \t \t \t Sample";
+		cout << "\n \t \t \t \t \t \t List written out";
+		cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
+		cout << "\n \t \t \t \t \t \t Coust treatment";
+		cout << "\n \t \t \t \t \t \t Exit";
+	}
+	void HomeScr5()
+	{
+		system("cls");
+		cout << endl;
+		cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+		cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+		cout << "\n\n\n\n";
+		cout << "\n \t \t \t \t \t \t Add patient";
+		cout << "\n \t \t \t \t \t \t Delete patient";
+		cout << "\n \t \t \t \t \t \t All patient";
+		cout << "\n \t \t \t \t \t \t Save data";
+		cout << "\n \t \t \t \t \t |-->>:>>Doc data";
+		cout << "\n \t \t \t \t \t \t Serch data";
+		cout << "\n \t \t \t \t \t \t Patient in palata";
+		cout << "\n \t \t \t \t \t \t Table patient";
+		cout << "\n \t \t \t \t \t \t Sort by diagnosis";
+		cout << "\n \t \t \t \t \t \t Sample";
+		cout << "\n \t \t \t \t \t \t List written out";
+		cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
+		cout << "\n \t \t \t \t \t \t Coust treatment";
+		cout << "\n \t \t \t \t \t \t Exit";
+	}
+	void HomeScr6()
+	{
+		system("cls");
+		cout << endl;
+		cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+		cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+		cout << "\n\n\n\n";
+		cout << "\n \t \t \t \t \t \t Add patient";
+		cout << "\n \t \t \t \t \t \t Delete patient";
+		cout << "\n \t \t \t \t \t \t All patient";
+		cout << "\n \t \t \t \t \t \t Save data";;
+		cout << "\n \t \t \t \t \t \t Doc data";
+		cout << "\n \t \t \t \t \t |-->>:>>Serch data";
+		cout << "\n \t \t \t \t \t \t Patient in palata";
+		cout << "\n \t \t \t \t \t \t Table patient";
+		cout << "\n \t \t \t \t \t \t Sort by diagnosis";
+		cout << "\n \t \t \t \t \t \t Sample";
+		cout << "\n \t \t \t \t \t \t List written out";
+		cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
+		cout << "\n \t \t \t \t \t \t Coust treatment";
+		cout << "\n \t \t \t \t \t \t Exit";
+	}
+	void HomeScr7()
+	{
+		system("cls");
+		cout << endl;
+		cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+		cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+		cout << "\n\n\n\n";
+		cout << "\n \t \t \t \t \t \t Add patient";
+		cout << "\n \t \t \t \t \t \t Delete patient";
+		cout << "\n \t \t \t \t \t \t All patient";
+		cout << "\n \t \t \t \t \t \t Save data";;
+		cout << "\n \t \t \t \t \t \t Doc data";
+		cout << "\n \t \t \t \t \t \t Serch data";
+		cout << "\n \t \t \t \t \t |-->>:>>Patient in palata";
+		cout << "\n \t \t \t \t \t \t Table patient";
+		cout << "\n \t \t \t \t \t \t Sort by diagnosis";
+		cout << "\n \t \t \t \t \t \t Sample";
+		cout << "\n \t \t \t \t \t \t List written out";
+		cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
+		cout << "\n \t \t \t \t \t \t Coust treatment";
+		cout << "\n \t \t \t \t \t \t Exit";
+	}
+	void HomeScr8()
+	{
+		system("cls");
+		cout << endl;
+		cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+		cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+		cout << "\n\n\n\n";
+		cout << "\n \t \t \t \t \t \t Add patient";
+		cout << "\n \t \t \t \t \t \t Delete patient";
+		cout << "\n \t \t \t \t \t \t All patient";
+		cout << "\n \t \t \t \t \t \t Save data";;
+		cout << "\n \t \t \t \t \t \t Doc data";
+		cout << "\n \t \t \t \t \t \t Serch data";
+		cout << "\n \t \t \t \t \t \t Patient in palata";
+		cout << "\n \t \t \t \t \t |-->>:>>Table patient";
+		cout << "\n \t \t \t \t \t \t Sort by diagnosis";
+		cout << "\n \t \t \t \t \t \t Sample";
+		cout << "\n \t \t \t \t \t \t List written out";
+		cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
+		cout << "\n \t \t \t \t \t \t Coust treatment";
+		cout << "\n \t \t \t \t \t \t Exit";
+	}
+	void HomeScr9()
+	{
+		system("cls");
+		cout << endl;
+		cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+		cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+		cout << "\n\n\n\n";
+		cout << "\n \t \t \t \t \t \t Add patient";
+		cout << "\n \t \t \t \t \t \t Delete patient";
+		cout << "\n \t \t \t \t \t \t All patient";
+		cout << "\n \t \t \t \t \t \t Save data";;
+		cout << "\n \t \t \t \t \t \t Doc data";
+		cout << "\n \t \t \t \t \t \t Serch data";
+		cout << "\n \t \t \t \t \t \t Patient in palata";
+		cout << "\n \t \t \t \t \t \t Table patient";
+		cout << "\n \t \t \t \t \t |-->>:>>Sort by diagnosis";
+		cout << "\n \t \t \t \t \t \t Sample";
+		cout << "\n \t \t \t \t \t \t List written out";
+		cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
+		cout << "\n \t \t \t \t \t \t Coust treatment";
+		cout << "\n \t \t \t \t \t \t Exit";
+	}
+	void HomeScr10()
+	{
+		system("cls");
+		cout << endl;
+		cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+		cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+		cout << "\n\n\n\n";
+		cout << "\n \t \t \t \t \t \t Add patient";
+		cout << "\n \t \t \t \t \t \t Delete patient";
+		cout << "\n \t \t \t \t \t \t All patient";
+		cout << "\n \t \t \t \t \t \t Save data";;
+		cout << "\n \t \t \t \t \t \t Doc data";
+		cout << "\n \t \t \t \t \t \t Serch data";
+		cout << "\n \t \t \t \t \t \t Patient in palata";
+		cout << "\n \t \t \t \t \t \t Table patient";
+		cout << "\n \t \t \t \t \t \t Sort by diagnosis";
+		cout << "\n \t \t \t \t \t |-->>:>>Sample";
+		cout << "\n \t \t \t \t \t \t List written out";
+		cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
+		cout << "\n \t \t \t \t \t \t Coust treatment";
+		cout << "\n \t \t \t \t \t \t Exit";
+	}
+	void HomeScr11()
+	{
+		system("cls");
+		cout << endl;
+		cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+		cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+		cout << "\n\n\n\n";
+		cout << "\n \t \t \t \t \t \t Add patient";
+		cout << "\n \t \t \t \t \t \t Delete patient";
+		cout << "\n \t \t \t \t \t \t All patient";
+		cout << "\n \t \t \t \t \t \t Save data";;
+		cout << "\n \t \t \t \t \t \t Doc data";
+		cout << "\n \t \t \t \t \t \t Serch data";
+		cout << "\n \t \t \t \t \t \t Patient in palata";
+		cout << "\n \t \t \t \t \t \t Table patient";
+		cout << "\n \t \t \t \t \t \t Sort by diagnosis";
+		cout << "\n \t \t \t \t \t \t Sample";
+		cout << "\n \t \t \t \t \t |-->>:>>List written out";
+		cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
+		cout << "\n \t \t \t \t \t \t Coust treatment";
+		cout << "\n \t \t \t \t \t \t Exit";
+	}
+	void HomeScr12()
+	{
+		system("cls");
+		cout << endl;
+		cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+		cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+		cout << "\n\n\n\n";
+		cout << "\n \t \t \t \t \t \t Add patient";
+		cout << "\n \t \t \t \t \t \t Delete patient";
+		cout << "\n \t \t \t \t \t \t All patient";
+		cout << "\n \t \t \t \t \t \t Save data";;
+		cout << "\n \t \t \t \t \t \t Doc data";
+		cout << "\n \t \t \t \t \t \t Serch data";
+		cout << "\n \t \t \t \t \t \t Patient in palata";
+		cout << "\n \t \t \t \t \t \t Table patient";
+		cout << "\n \t \t \t \t \t \t Sort by diagnosis";
+		cout << "\n \t \t \t \t \t \t Sample";
+		cout << "\n \t \t \t \t \t \t List written out";
+		cout << "\n \t \t \t \t \t |-->>:>>Delete patient discharge last year";
+		cout << "\n \t \t \t \t \t \t Coust treatment";
+		cout << "\n \t \t \t \t \t \t Exit";
+	}
+	void HomeScr13()
+	{
+		system("cls");
+		cout << endl;
+		cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+		cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+		cout << "\n\n\n\n";
+		cout << "\n \t \t \t \t \t \t Add patient";
+		cout << "\n \t \t \t \t \t \t Delete patient";
+		cout << "\n \t \t \t \t \t \t All patient";
+		cout << "\n \t \t \t \t \t \t Save data";;
+		cout << "\n \t \t \t \t \t \t Doc data";
+		cout << "\n \t \t \t \t \t \t Serch data";
+		cout << "\n \t \t \t \t \t \t Patient in palata";
+		cout << "\n \t \t \t \t \t \t Table patient";
+		cout << "\n \t \t \t \t \t \t Sort by diagnosis";
+		cout << "\n \t \t \t \t \t \t Sample";
+		cout << "\n \t \t \t \t \t \t List written out";
+		cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
+		cout << "\n \t \t \t \t \t |-->>:>>Coust treatment";
+		cout << "\n \t \t \t \t \t \t Exit";
+	}
+	void HomeScr14()
+	{
+		system("cls");
+		cout << endl;
+		cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+		cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+		cout << "\n\n\n\n";
+		cout << "\n \t \t \t \t \t \t Add patient";
+		cout << "\n \t \t \t \t \t \t Delete patient";
+		cout << "\n \t \t \t \t \t \t All patient";
+		cout << "\n \t \t \t \t \t \t Save data";;
+		cout << "\n \t \t \t \t \t \t Doc data";
+		cout << "\n \t \t \t \t \t \t Serch data";
+		cout << "\n \t \t \t \t \t \t Patient in palata";
+		cout << "\n \t \t \t \t \t \t Table patient";
+		cout << "\n \t \t \t \t \t \t Sort by diagnosis";
+		cout << "\n \t \t \t \t \t \t Sample";
+		cout << "\n \t \t \t \t \t \t List written out";
+		cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
+		cout << "\n \t \t \t \t \t \t Coust treatment";
+		cout << "\n \t \t \t \t \t |-->>:>>Exit";
+	}
+
+	int Home()
+	{
+		char key;
+		int flag = 0;
+		while (1)
+		{
+			fflush(stdin);
+			key = _getch();
+			if (key == 0xE0) key = _getch();
+			if (key == 'P') // key = Down
+			{
+				flag++;
+				if (flag > 14)  flag = 1;
+				if (flag == 1) HomeScr1();
+				else if (flag == 2) HomeScr2();
+				else if (flag == 3) HomeScr3();
+				else if (flag == 4) HomeScr4();
+				else if (flag == 5) HomeScr5();
+				else if (flag == 6) HomeScr6();
+				else if (flag == 7) HomeScr7();
+				else if (flag == 8) HomeScr8();
+				else if (flag == 9) HomeScr9();
+				else if (flag == 10) HomeScr10();
+				else if (flag == 11) HomeScr11();
+				else if (flag == 12) HomeScr12();
+				else if (flag == 13) HomeScr13();
+				else if (flag == 14) HomeScr14();
+				
+			}
+			else if (key == 72) // key = Up
+			{
+				flag--;
+				if (flag < 1)  flag = 14;
+				if (flag == 1) HomeScr1();
+				else if (flag == 2) HomeScr2();
+				else if (flag == 3) HomeScr3();
+				else if (flag == 4) HomeScr4();
+				else if (flag == 5) HomeScr5();
+				else if (flag == 6) HomeScr6();
+				else if (flag == 7) HomeScr7();
+				else if (flag == 8) HomeScr8();
+				else if (flag == 9) HomeScr9();
+				else if (flag == 10) HomeScr10();
+				else if (flag == 11) HomeScr11();
+				else if (flag == 12) HomeScr12();
+				else if (flag == 13) HomeScr13();
+				else if (flag == 14) HomeScr14();
+			}
+			else if (key == 13 || key == 10) // key = enter
+			{
+				return flag;
+				break;
+			}
+		}
+		return flag;
+	}
+	void endfile()
+	{
+		system("cls");
+		char key;
+		cout<<"\n \n \t \t \t \t \t     Are You Sure You Want to Exit ?";
+
+		cout<<"\n \n \t \t \t \t \t Press 'ENTER' to Exit , 'ESC' to Cancel";
+	Button:
+		key = _getch();
+		if ((key == 10) || (key == 13))
+		{
+			system("cls");
+			cout<<"\n \n \n \n \n \n \n \t \t \t \t \t \t GOOOOD BYE";
+			exit(0);
+		}
+		else if (key == 27) { HomeScr(); }
+		else { goto Button; }
+	}
+};
+
+
 int main()
 {
 	Patient *data;
@@ -409,39 +860,22 @@ int main()
 	int id = 0;
 	int palata = 0;
 
+	Menu menu;
+	menu.HomeScr();
+	int index = 0;
+	int flag = 0;
 
-	while (!exit) {
-
-		cout << " ____________" << endl;
-		cout << " ____Menu____" << endl;
-		cout << " ____________\n" << endl;
-
-		cout << "\t 1. Add patient.\n" << endl;
-		cout << "\t 2. Delete patient.\n" << endl;
-		cout << "\t 3. All patient.\n" << endl;
-		cout << "\t 4. Save data.\n" << endl;
-		cout << "\t 5. Doc data.\n" << endl;
-		cout << "\t 6. Serch data.\n" << endl;
-		cout << "\t 7. Patient in palata.\n" << endl;
-		cout << "\t 8. Table patient.\n" << endl;
-		cout << "\t 9. Sort by diagnosis.\n" << endl;
-		cout << "\t 10. Sample.\n" << endl;
-		cout << "\t 11. List written out.\n" << endl;
-		cout << "\t 0. Exit.\n" << endl;
-
-
-		cout << "Enter your choise:";
-		cin >> choise;
-
-		switch (choise) {
-
-		case 1:
-
+	while (1)
+	{
+		index = menu.Home();
+		if (index == 14) menu.endfile();
+		else if (index == 1) 
+		{ 
 			cout << " Add new patient: " << endl;
-			cout << " ID: ";
-			cin >> data2.id;
+			cout << " ID: " << Size;
+			data2.id = Size;
 
-			cout << " Name: ";
+			cout << "\n Name: ";
 			cin >> data2.name;
 
 			cout << " Surname: ";
@@ -479,61 +913,95 @@ int main()
 			cin >> data2.year_of_discharge;
 
 			Add_Patient(data, data2);
-			break;
-
-		case 2:
+			flag = 1;
+		}
+		else if (index == 2) 
+		{
 			cout << "Enter id patient: ";
 			cin >> id;
 			Delete_data(data, id);
 			Print_Data(data);
-			break;
-
-		case 3:
+		}
+		else if (index == 3)
+		{
+			/*if (flag == 1)
+			{
+				system("cls");
+				cout << endl;
+				cout << " Cairo University \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+				cout << " Faculty of Engineering \t \t \t \t\t \t \t \t\t Data Structure" << endl;
+				cout << " Systems and Biomedical Engineering Department \t \t \t \t\t \t \t Data of Patients " << endl;
+				cout << "\n\n\n\n";
+				cout << endl << " Enter The Patient Number To Delete : ";
+				cin >> p_num;
+				cout << endl;
+			}*/
 			cout << "\n Database\n__________________________________" << endl;
 			Print_Data(data);
-			break;
-
-		case 4:
+			
+		}
+		else if (index == 4) 
+		{
 			cout << "Saving data...";
 			Save_Data(path, data);
-			break;
-
-		case 5:
+		}
+		else if (index == 5)
+		{
 			cout << "\n__________________________________" << endl;
 			Print_Doc(doc);
-			break;
-		case 6:
+		}
+		else if (index == 6)
+		{
+			/*if (flag == 1)
+			{
+				system("cls");
+				cout << endl;
+				cout << " Cairo University \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+				cout << " Faculty of Engineering \t \t \t \t\t \t \t \t\t Data Structure" << endl;
+				cout << " Systems and Biomedical Engineering Department \t \t \t \t\t \t \t Data of Patients " << endl;
+				cout << "\n\n\n\n";
+				cout << endl << " Enter The Patient Number : ";
+				cin >> p_num;
+				cout << endl;
+			}*/
 			cout << "\n____________________________________" << endl;
 			cout << "Enter id patient to serch:";
 			cin >> id;
 			Serch_data(data, id);
-			break;
-		case 7:
-			cout << "\n_____________________________________" << endl;
-			cout << "Enter # palata: ";
-			cin >> palata;
-			Serch_in_palata(data, palata, doc);
-			break;
-		case 8:
-			Table_patient(data);
-			break;
-		case 9:
-			Sort_diagnosis(data);
-			break;
-		case 10:
-			Sample(data);
-			break;
-		case 11:
-			List_written_out(data);
-			break;
-		case 0:
-			exit = true;
-			break;
 		}
-
+		else if (index == 7)
+		{
+		cout << "\n_____________________________________" << endl;
+		cout << "Enter # palata: ";
+		cin >> palata;
+		Serch_in_palata(data, palata, doc);
+		}
+	
+		else if (index == 8)
+		{
+			Table_patient(data);
+		}
+		else if (index == 9)
+		{
+			Sort_diagnosis(data);
+		}
+		else if (index == 10)
+		{
+			Sample(data);
+		}
+		else if (index == 11)
+		{
+			List_written_out(data);
+		}
+		else if (index == 12)
+		{
+			Delete_patient_discharge_last_year(data);
+		}
+		else if (index == 13)
+		{
+			Coust_treatment(data);;
+		}
 	}
-	cout << "_______________________________" << endl;
-
 
 	system("pause");
 	return 0;
