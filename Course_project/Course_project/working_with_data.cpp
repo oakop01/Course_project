@@ -161,14 +161,17 @@ void Delete_data(Patient*& data, int& Size)
 			newData[i].day_of_discharge = data[i].day_of_discharge;
 			newData[i].months_of_discharge = data[i].months_of_discharge;
 			newData[i].year_of_discharge = data[i].year_of_discharge;
-		}
-		//Data_overwrite(newData[i], data[i]);
+			}
 	}
 
-	for (int i = id; i < Size-1; i++)
-	{
+	for (int i = id; i < Size-1; i++){
 		Data_overwrite(newData[i], data[i+1]);
 	}
+
+	for (int i = 0; i < Size - 1; i++){
+		newData[i].id = i;
+	}
+	
 	delete[] data;
 	data = newData;
 	Size--;
@@ -208,7 +211,7 @@ void Delete_patient_discharge_last_year(Patient *data, int& Size)
 	{
 		if (data[i].year_of_discharge <= 2018)
 		{
-			tmp++;//çíàõîäèìî ê³ëüê³ñòü ïàö³ºíò³â ùî âèïèñàëèñÿ á³ëüøå ðîêó òîìó
+			tmp++;//Ã§Ã­Ã ÃµÃ®Ã¤Ã¨Ã¬Ã® ÃªÂ³Ã«Ã¼ÃªÂ³Ã±Ã²Ã¼ Ã¯Ã Ã¶Â³ÂºÃ­Ã²Â³Ã¢ Ã¹Ã® Ã¢Ã¨Ã¯Ã¨Ã±Ã Ã«Ã¨Ã±Ã¿ Ã¡Â³Ã«Ã¼Ã¸Ã¥ Ã°Ã®ÃªÃ³ Ã²Ã®Ã¬Ã³
 		}
 	}
 
