@@ -40,7 +40,7 @@ tabletka
 10
 5
 8
-2019
+2017
 3
 Marshall
 Jones
@@ -61,7 +61,7 @@ Harrell
 10
 6
 2019
-bolnoy
+abolnoy
 tabletka
 2
 89113366
@@ -82,4 +82,4 @@ tabletka
 13
 5
 8
-2017
+2018

@@ -1,4 +1,5 @@
 #include<iostream>
+#include<windows.h>
 #include<string>
 #include<fstream>
 #include<iomanip>
@@ -23,8 +24,6 @@ int main()
 	Fill_Data(data, path, Size);
 	Fill_Doc(doc, path2, Size);
 
-	int id = 0;	
-
 	Menu menu;
 	menu.HomeScr();
 	int index = 0;
@@ -33,12 +32,14 @@ int main()
 	while (1)
 	{
 		index = menu.Home();
-		if (index == 14) menu.endfile();
-		else if (index == 1) 
-		{ 
+		if (index == 15) menu.endfile();
+		else if (index == 1){ 			
+			Print_Data(data, Size);			
+		}
+		else if (index == 2) {
 			cout << "\n Add new patient: " << endl;
-			cout << " ID: " << Size+1;
-			data2.id = Size+1;
+			cout << " ID: " << Size ;
+			data2.id = Size ;
 
 			cout << "\n Name: ";
 			cin >> data2.name;
@@ -79,49 +80,44 @@ int main()
 
 			Add_Patient(data, data2, Size);
 			flag = 1;
+			
 		}
-		else if (index == 2) {
+		else if (index == 3){
 			Delete_data(data, Size);
 			Print_Data(data, Size);
 		}
-		else if (index == 3){
-			cout << "\n\n Database\n__________________________________" << endl;
-			Print_Data(data, Size);
-		}
 		else if (index == 4) {
-			cout << "\n\nSaving data...";
-			Save_Data(path, data, Size);
+			Sort_diagnosis(data, Size);			
 		}
-		else if (index == 5){
-			cout << "\n__________________________________" << endl;
-			Print_Doc(doc, Size);
+		else if (index == 5){			
+			Serch_data(data, Size);			
 		}
 		else if (index == 6){
-			cout << "\n____________________________________" << endl;
-			cout << "\n\n Enter id patient to serch:";
-			cin >> id;
-			Serch_data(data, id, Size);
-		}
-		else if (index == 7){
-			Serch_in_palata(data, doc, Size);
-		}	
-		else if (index == 8){
-			Table_patient(data, Size);
-		}
-		else if (index == 9){
-			Sort_diagnosis(data, Size);
-		}
-		else if (index == 10){
 			Sample(data, Size);
 		}
+		else if (index == 7){
+			List_written_out(data, Size);			
+		}	
+		else if (index == 8){
+			Serch_in_palata(data, doc, Size);			
+		}
+		else if (index == 9){
+			Coust_treatment(data, Size);
+		}
+		else if (index == 10){
+			Delete_patient_discharge_last_year(data, Size);			
+		}
 		else if (index == 11){
-			List_written_out(data, Size);
+			Table_patient(data, Size);
 		}
 		else if (index == 12){
-			Delete_patient_discharge_last_year(data, Size);
+			Account_for_treatment(data, Size);
 		}
-		else if (index == 13){
-			Coust_treatment(data, Size);
+		else if (index == 13){			
+			Print_Doc(doc, Size);
+		}
+		else if (index == 14){			
+			Save_Data(path, data, Size);
 		}
 	}
 	system("pause");

@@ -19,6 +19,7 @@ struct Menu
 	void HomeScr12();
 	void HomeScr13();
 	void HomeScr14();
+	void HomeScr15();
 	int Home();
 	void endfile();
 };

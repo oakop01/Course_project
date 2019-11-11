@@ -33,10 +33,12 @@ void Print_Data(Patient* data, int& Size);
 
 void Print_Doc(Doctor* doc, int& Size);
 
-void Serch_data(Patient* data, int& id, int& Size);
+void Serch_data(Patient* data, int& Size);
 
 void Serch_in_palata(Patient*& data, Doctor*& doc, int& Size);
 
 void Table_patient(Patient *data, int& Size);
 
 void Sort_diagnosis(Patient *data, int& Size);
+
+void Account_for_treatment(Patient *data, int& Size);

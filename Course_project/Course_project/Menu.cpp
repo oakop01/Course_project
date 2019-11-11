@@ -11,20 +11,21 @@ void Menu::HomeScr()
 	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
 	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
 	cout << "\n\n\n\n";
-	cout << "\n \t \t \t \t \t \t Add patient";
-	cout << "\n \t \t \t \t \t \t Delete patient";
-	cout << "\n \t \t \t \t \t \t All patient";
-	cout << "\n \t \t \t \t \t \t Save data";
-	cout << "\n \t \t \t \t \t \t Doc data";
-	cout << "\n \t \t \t \t \t \t Serch data";
-	cout << "\n \t \t \t \t \t \t Patient in palata";
-	cout << "\n \t \t \t \t \t \t Table patient";
-	cout << "\n \t \t \t \t \t \t Sort by diagnosis";
-	cout << "\n \t \t \t \t \t \t Sample";
-	cout << "\n \t \t \t \t \t \t List written out";
-	cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
-	cout << "\n \t \t \t \t \t \t Coust treatment";
-	cout << "\n \t \t \t \t \t \t Exit";
+	cout << "\n \t \t \t \t \t [~]  All patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Add patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Sort by diagnosis                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Serch patient                          [~]";
+	cout << "\n \t \t \t \t \t [~]  Select patients by day and diagnosis   [~]";
+	cout << "\n \t \t \t \t \t [~]  List written out                       [~]";
+	cout << "\n \t \t \t \t \t [~]  Number of patients in wards            [~]";
+	cout << "\n \t \t \t \t \t [~]  Cost treatment                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient discharge last year     [~]";
+	cout << "\n \t \t \t \t \t [~]  Table of patients                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Check for treatment                    [~]";	
+	cout << "\n \t \t \t \t \t [~]  Doc data                               [~]";
+	cout << "\n \t \t \t \t \t [~]  Save data                              [~]";	
+	cout << "\n \t \t \t \t \t [~]  Exit                                   [~]";
 }
 void Menu::HomeScr1()
 {
@@ -33,20 +34,21 @@ void Menu::HomeScr1()
 	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
 	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
 	cout << "\n\n\n\n";
-	cout << "\n \t \t \t \t \t |-->>:>>Add patient";
-	cout << "\n \t \t \t \t \t \t Delete patient";
-	cout << "\n \t \t \t \t \t \t All patient";
-	cout << "\n \t \t \t \t \t \t Save data";
-	cout << "\n \t \t \t \t \t \t Doc data";
-	cout << "\n \t \t \t \t \t \t Serch data";
-	cout << "\n \t \t \t \t \t \t Patient in palata";
-	cout << "\n \t \t \t \t \t \t Table patient";
-	cout << "\n \t \t \t \t \t \t Sort by diagnosis";
-	cout << "\n \t \t \t \t \t \t Sample";
-	cout << "\n \t \t \t \t \t \t List written out";
-	cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
-	cout << "\n \t \t \t \t \t \t Coust treatment";
-	cout << "\n \t \t \t \t \t \t Exit";
+	cout << "\n \t \t \t \t     >>>      All patient                                <<<";
+	cout << "\n \t \t \t \t \t [~]  Add patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Sort by diagnosis                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Serch patient                          [~]";
+	cout << "\n \t \t \t \t \t [~]  Select patients by day and diagnosis   [~]";
+	cout << "\n \t \t \t \t \t [~]  List written out                       [~]";
+	cout << "\n \t \t \t \t \t [~]  Number of patients in wards            [~]";
+	cout << "\n \t \t \t \t \t [~]  Cost treatment                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient discharge last year     [~]";
+	cout << "\n \t \t \t \t \t [~]  Table of patients                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Check for treatment                    [~]";
+	cout << "\n \t \t \t \t \t [~]  Doc data                               [~]";
+	cout << "\n \t \t \t \t \t [~]  Save data                              [~]";
+	cout << "\n \t \t \t \t \t [~]  Exit                                   [~]";
 }
 void Menu::HomeScr2()
 {
@@ -55,20 +57,21 @@ void Menu::HomeScr2()
 	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
 	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
 	cout << "\n\n\n\n";
-	cout << "\n \t \t \t \t \t \t Add patient";
-	cout << "\n \t \t \t \t \t |-->>:>>Delete patient";
-	cout << "\n \t \t \t \t \t \t All patient";
-	cout << "\n \t \t \t \t \t \t Save data";
-	cout << "\n \t \t \t \t \t \t Doc data";
-	cout << "\n \t \t \t \t \t \t Serch data";
-	cout << "\n \t \t \t \t \t \t Patient in palata";
-	cout << "\n \t \t \t \t \t \t Table patient";
-	cout << "\n \t \t \t \t \t \t Sort by diagnosis";
-	cout << "\n \t \t \t \t \t \t Sample";
-	cout << "\n \t \t \t \t \t \t List written out";
-	cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
-	cout << "\n \t \t \t \t \t \t Coust treatment";
-	cout << "\n \t \t \t \t \t \t Exit";
+	cout << "\n \t \t \t \t \t [~]  All patient                            [~]";
+	cout << "\n \t \t \t \t     >>>      Add patient                                <<<";
+	cout << "\n \t \t \t \t \t [~]  Delete patient                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Sort by diagnosis                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Serch patient                          [~]";
+	cout << "\n \t \t \t \t \t [~]  Select patients by day and diagnosis   [~]";
+	cout << "\n \t \t \t \t \t [~]  List written out                       [~]";
+	cout << "\n \t \t \t \t \t [~]  Number of patients in wards            [~]";
+	cout << "\n \t \t \t \t \t [~]  Cost treatment                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient discharge last year     [~]";
+	cout << "\n \t \t \t \t \t [~]  Table of patients                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Check for treatment                    [~]";
+	cout << "\n \t \t \t \t \t [~]  Doc data                               [~]";
+	cout << "\n \t \t \t \t \t [~]  Save data                              [~]";
+	cout << "\n \t \t \t \t \t [~]  Exit                                   [~]";
 }
 void Menu::HomeScr3()
 {
@@ -77,20 +80,21 @@ void Menu::HomeScr3()
 	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
 	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
 	cout << "\n\n\n\n";
-	cout << "\n \t \t \t \t \t \t Add patient";
-	cout << "\n \t \t \t \t \t \t Delete patient";
-	cout << "\n \t \t \t \t \t |-->>:>>All patient";
-	cout << "\n \t \t \t \t \t \t Save data";
-	cout << "\n \t \t \t \t \t \t Doc data";
-	cout << "\n \t \t \t \t \t \t Serch data";
-	cout << "\n \t \t \t \t \t \t Patient in palata";
-	cout << "\n \t \t \t \t \t \t Table patient";
-	cout << "\n \t \t \t \t \t \t Sort by diagnosis";
-	cout << "\n \t \t \t \t \t \t Sample";
-	cout << "\n \t \t \t \t \t \t List written out";
-	cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
-	cout << "\n \t \t \t \t \t \t Coust treatment";
-	cout << "\n \t \t \t \t \t \t Exit";
+	cout << "\n \t \t \t \t \t [~]  All patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Add patient                            [~]";
+	cout << "\n \t \t \t \t     >>>      Delete patient                             <<<";
+	cout << "\n \t \t \t \t \t [~]  Sort by diagnosis                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Serch patient                          [~]";
+	cout << "\n \t \t \t \t \t [~]  Select patients by day and diagnosis   [~]";
+	cout << "\n \t \t \t \t \t [~]  List written out                       [~]";
+	cout << "\n \t \t \t \t \t [~]  Number of patients in wards            [~]";
+	cout << "\n \t \t \t \t \t [~]  Cost treatment                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient discharge last year     [~]";
+	cout << "\n \t \t \t \t \t [~]  Table of patients                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Check for treatment                    [~]";
+	cout << "\n \t \t \t \t \t [~]  Doc data                               [~]";
+	cout << "\n \t \t \t \t \t [~]  Save data                              [~]";
+	cout << "\n \t \t \t \t \t [~]  Exit                                   [~]";
 }
 void Menu::HomeScr4()
 {
@@ -99,20 +103,21 @@ void Menu::HomeScr4()
 	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
 	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
 	cout << "\n\n\n\n";
-	cout << "\n \t \t \t \t \t \t Add patient";
-	cout << "\n \t \t \t \t \t \t Delete patient";
-	cout << "\n \t \t \t \t \t \t All patient";
-	cout << "\n \t \t \t \t \t |-->>:>>Save data";
-	cout << "\n \t \t \t \t \t \t Doc data";
-	cout << "\n \t \t \t \t \t \t Serch data";
-	cout << "\n \t \t \t \t \t \t Patient in palata";
-	cout << "\n \t \t \t \t \t \t Table patient";
-	cout << "\n \t \t \t \t \t \t Sort by diagnosis";
-	cout << "\n \t \t \t \t \t \t Sample";
-	cout << "\n \t \t \t \t \t \t List written out";
-	cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
-	cout << "\n \t \t \t \t \t \t Coust treatment";
-	cout << "\n \t \t \t \t \t \t Exit";
+	cout << "\n \t \t \t \t \t [~]  All patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Add patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient                         [~]";
+	cout << "\n \t \t \t \t     >>>      Sort by diagnosis                          <<<";
+	cout << "\n \t \t \t \t \t [~]  Serch patient                          [~]";
+	cout << "\n \t \t \t \t \t [~]  Select patients by day and diagnosis   [~]";
+	cout << "\n \t \t \t \t \t [~]  List written out                       [~]";
+	cout << "\n \t \t \t \t \t [~]  Number of patients in wards            [~]";
+	cout << "\n \t \t \t \t \t [~]  Cost treatment                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient discharge last year     [~]";
+	cout << "\n \t \t \t \t \t [~]  Table of patients                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Check for treatment                    [~]";
+	cout << "\n \t \t \t \t \t [~]  Doc data                               [~]";
+	cout << "\n \t \t \t \t \t [~]  Save data                              [~]";
+	cout << "\n \t \t \t \t \t [~]  Exit                                   [~]";
 }
 void Menu::HomeScr5()
 {
@@ -121,20 +126,21 @@ void Menu::HomeScr5()
 	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
 	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
 	cout << "\n\n\n\n";
-	cout << "\n \t \t \t \t \t \t Add patient";
-	cout << "\n \t \t \t \t \t \t Delete patient";
-	cout << "\n \t \t \t \t \t \t All patient";
-	cout << "\n \t \t \t \t \t \t Save data";
-	cout << "\n \t \t \t \t \t |-->>:>>Doc data";
-	cout << "\n \t \t \t \t \t \t Serch data";
-	cout << "\n \t \t \t \t \t \t Patient in palata";
-	cout << "\n \t \t \t \t \t \t Table patient";
-	cout << "\n \t \t \t \t \t \t Sort by diagnosis";
-	cout << "\n \t \t \t \t \t \t Sample";
-	cout << "\n \t \t \t \t \t \t List written out";
-	cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
-	cout << "\n \t \t \t \t \t \t Coust treatment";
-	cout << "\n \t \t \t \t \t \t Exit";
+	cout << "\n \t \t \t \t \t [~]  All patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Add patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Sort by diagnosis                      [~]";
+	cout << "\n \t \t \t \t     >>>      Serch patient                              <<<";
+	cout << "\n \t \t \t \t \t [~]  Select patients by day and diagnosis   [~]";
+	cout << "\n \t \t \t \t \t [~]  List written out                       [~]";
+	cout << "\n \t \t \t \t \t [~]  Number of patients in wards            [~]";
+	cout << "\n \t \t \t \t \t [~]  Cost treatment                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient discharge last year     [~]";
+	cout << "\n \t \t \t \t \t [~]  Table of patients                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Check for treatment                    [~]";
+	cout << "\n \t \t \t \t \t [~]  Doc data                               [~]";
+	cout << "\n \t \t \t \t \t [~]  Save data                              [~]";
+	cout << "\n \t \t \t \t \t [~]  Exit                                   [~]";
 }
 void Menu::HomeScr6()
 {
@@ -143,20 +149,21 @@ void Menu::HomeScr6()
 	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
 	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
 	cout << "\n\n\n\n";
-	cout << "\n \t \t \t \t \t \t Add patient";
-	cout << "\n \t \t \t \t \t \t Delete patient";
-	cout << "\n \t \t \t \t \t \t All patient";
-	cout << "\n \t \t \t \t \t \t Save data";;
-	cout << "\n \t \t \t \t \t \t Doc data";
-	cout << "\n \t \t \t \t \t |-->>:>>Serch data";
-	cout << "\n \t \t \t \t \t \t Patient in palata";
-	cout << "\n \t \t \t \t \t \t Table patient";
-	cout << "\n \t \t \t \t \t \t Sort by diagnosis";
-	cout << "\n \t \t \t \t \t \t Sample";
-	cout << "\n \t \t \t \t \t \t List written out";
-	cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
-	cout << "\n \t \t \t \t \t \t Coust treatment";
-	cout << "\n \t \t \t \t \t \t Exit";
+	cout << "\n \t \t \t \t \t [~]  All patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Add patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Sort by diagnosis                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Serch patient                          [~]";
+	cout << "\n \t \t \t \t     >>>      Select patients by day and diagnosis       <<<";
+	cout << "\n \t \t \t \t \t [~]  List written out                       [~]";
+	cout << "\n \t \t \t \t \t [~]  Number of patients in wards            [~]";
+	cout << "\n \t \t \t \t \t [~]  Cost treatment                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient discharge last year     [~]";
+	cout << "\n \t \t \t \t \t [~]  Table of patients                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Check for treatment                    [~]";
+	cout << "\n \t \t \t \t \t [~]  Doc data                               [~]";
+	cout << "\n \t \t \t \t \t [~]  Save data                              [~]";
+	cout << "\n \t \t \t \t \t [~]  Exit                                   [~]";
 }
 void Menu::HomeScr7()
 {
@@ -165,20 +172,21 @@ void Menu::HomeScr7()
 	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
 	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
 	cout << "\n\n\n\n";
-	cout << "\n \t \t \t \t \t \t Add patient";
-	cout << "\n \t \t \t \t \t \t Delete patient";
-	cout << "\n \t \t \t \t \t \t All patient";
-	cout << "\n \t \t \t \t \t \t Save data";;
-	cout << "\n \t \t \t \t \t \t Doc data";
-	cout << "\n \t \t \t \t \t \t Serch data";
-	cout << "\n \t \t \t \t \t |-->>:>>Patient in palata";
-	cout << "\n \t \t \t \t \t \t Table patient";
-	cout << "\n \t \t \t \t \t \t Sort by diagnosis";
-	cout << "\n \t \t \t \t \t \t Sample";
-	cout << "\n \t \t \t \t \t \t List written out";
-	cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
-	cout << "\n \t \t \t \t \t \t Coust treatment";
-	cout << "\n \t \t \t \t \t \t Exit";
+	cout << "\n \t \t \t \t \t [~]  All patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Add patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Sort by diagnosis                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Serch patient                          [~]";
+	cout << "\n \t \t \t \t \t [~]  Select patients by day and diagnosis   [~]";
+	cout << "\n \t \t \t \t     >>>      List written out                           <<<";
+	cout << "\n \t \t \t \t \t [~]  Number of patients in wards            [~]";
+	cout << "\n \t \t \t \t \t [~]  Cost treatment                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient discharge last year     [~]";
+	cout << "\n \t \t \t \t \t [~]  Table of patients                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Check for treatment                    [~]";
+	cout << "\n \t \t \t \t \t [~]  Doc data                               [~]";
+	cout << "\n \t \t \t \t \t [~]  Save data                              [~]";
+	cout << "\n \t \t \t \t \t [~]  Exit                                   [~]";
 }
 void Menu::HomeScr8()
 {
@@ -187,20 +195,21 @@ void Menu::HomeScr8()
 	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
 	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
 	cout << "\n\n\n\n";
-	cout << "\n \t \t \t \t \t \t Add patient";
-	cout << "\n \t \t \t \t \t \t Delete patient";
-	cout << "\n \t \t \t \t \t \t All patient";
-	cout << "\n \t \t \t \t \t \t Save data";;
-	cout << "\n \t \t \t \t \t \t Doc data";
-	cout << "\n \t \t \t \t \t \t Serch data";
-	cout << "\n \t \t \t \t \t \t Patient in palata";
-	cout << "\n \t \t \t \t \t |-->>:>>Table patient";
-	cout << "\n \t \t \t \t \t \t Sort by diagnosis";
-	cout << "\n \t \t \t \t \t \t Sample";
-	cout << "\n \t \t \t \t \t \t List written out";
-	cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
-	cout << "\n \t \t \t \t \t \t Coust treatment";
-	cout << "\n \t \t \t \t \t \t Exit";
+	cout << "\n \t \t \t \t \t [~]  All patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Add patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Sort by diagnosis                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Serch patient                          [~]";
+	cout << "\n \t \t \t \t \t [~]  Select patients by day and diagnosis   [~]";
+	cout << "\n \t \t \t \t \t [~]  List written out                       [~]";
+	cout << "\n \t \t \t \t     >>>      Number of patients in wards                <<<";
+	cout << "\n \t \t \t \t \t [~]  Cost treatment                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient discharge last year     [~]";
+	cout << "\n \t \t \t \t \t [~]  Table of patients                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Check for treatment                    [~]";
+	cout << "\n \t \t \t \t \t [~]  Doc data                               [~]";
+	cout << "\n \t \t \t \t \t [~]  Save data                              [~]";
+	cout << "\n \t \t \t \t \t [~]  Exit                                   [~]";
 }
 void Menu::HomeScr9()
 {
@@ -209,20 +218,21 @@ void Menu::HomeScr9()
 	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
 	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
 	cout << "\n\n\n\n";
-	cout << "\n \t \t \t \t \t \t Add patient";
-	cout << "\n \t \t \t \t \t \t Delete patient";
-	cout << "\n \t \t \t \t \t \t All patient";
-	cout << "\n \t \t \t \t \t \t Save data";;
-	cout << "\n \t \t \t \t \t \t Doc data";
-	cout << "\n \t \t \t \t \t \t Serch data";
-	cout << "\n \t \t \t \t \t \t Patient in palata";
-	cout << "\n \t \t \t \t \t \t Table patient";
-	cout << "\n \t \t \t \t \t |-->>:>>Sort by diagnosis";
-	cout << "\n \t \t \t \t \t \t Sample";
-	cout << "\n \t \t \t \t \t \t List written out";
-	cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
-	cout << "\n \t \t \t \t \t \t Coust treatment";
-	cout << "\n \t \t \t \t \t \t Exit";
+	cout << "\n \t \t \t \t \t [~]  All patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Add patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Sort by diagnosis                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Serch patient                          [~]";
+	cout << "\n \t \t \t \t \t [~]  Select patients by day and diagnosis   [~]";
+	cout << "\n \t \t \t \t \t [~]  List written out                       [~]";
+	cout << "\n \t \t \t \t \t [~]  Number of patients in wards            [~]";
+	cout << "\n \t \t \t \t     >>>      Cost treatment                             <<<";
+	cout << "\n \t \t \t \t \t [~]  Delete patient discharge last year     [~]";
+	cout << "\n \t \t \t \t \t [~]  Table of patients                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Check for treatment                    [~]";
+	cout << "\n \t \t \t \t \t [~]  Doc data                               [~]";
+	cout << "\n \t \t \t \t \t [~]  Save data                              [~]";
+	cout << "\n \t \t \t \t \t [~]  Exit                                   [~]";
 }
 void Menu::HomeScr10()
 {
@@ -231,20 +241,21 @@ void Menu::HomeScr10()
 	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
 	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
 	cout << "\n\n\n\n";
-	cout << "\n \t \t \t \t \t \t Add patient";
-	cout << "\n \t \t \t \t \t \t Delete patient";
-	cout << "\n \t \t \t \t \t \t All patient";
-	cout << "\n \t \t \t \t \t \t Save data";;
-	cout << "\n \t \t \t \t \t \t Doc data";
-	cout << "\n \t \t \t \t \t \t Serch data";
-	cout << "\n \t \t \t \t \t \t Patient in palata";
-	cout << "\n \t \t \t \t \t \t Table patient";
-	cout << "\n \t \t \t \t \t \t Sort by diagnosis";
-	cout << "\n \t \t \t \t \t |-->>:>>Sample";
-	cout << "\n \t \t \t \t \t \t List written out";
-	cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
-	cout << "\n \t \t \t \t \t \t Coust treatment";
-	cout << "\n \t \t \t \t \t \t Exit";
+	cout << "\n \t \t \t \t \t [~]  All patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Add patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Sort by diagnosis                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Serch patient                          [~]";
+	cout << "\n \t \t \t \t \t [~]  Select patients by day and diagnosis   [~]";
+	cout << "\n \t \t \t \t \t [~]  List written out                       [~]";
+	cout << "\n \t \t \t \t \t [~]  Number of patients in wards            [~]";
+	cout << "\n \t \t \t \t \t [~]  Cost treatment                         [~]";
+	cout << "\n \t \t \t \t     >>>      Delete patient discharge last year         <<<";
+	cout << "\n \t \t \t \t \t [~]  Table of patients                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Check for treatment                    [~]";
+	cout << "\n \t \t \t \t \t [~]  Doc data                               [~]";
+	cout << "\n \t \t \t \t \t [~]  Save data                              [~]";
+	cout << "\n \t \t \t \t \t [~]  Exit                                   [~]";
 }
 void Menu::HomeScr11()
 {
@@ -253,20 +264,21 @@ void Menu::HomeScr11()
 	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
 	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
 	cout << "\n\n\n\n";
-	cout << "\n \t \t \t \t \t \t Add patient";
-	cout << "\n \t \t \t \t \t \t Delete patient";
-	cout << "\n \t \t \t \t \t \t All patient";
-	cout << "\n \t \t \t \t \t \t Save data";;
-	cout << "\n \t \t \t \t \t \t Doc data";
-	cout << "\n \t \t \t \t \t \t Serch data";
-	cout << "\n \t \t \t \t \t \t Patient in palata";
-	cout << "\n \t \t \t \t \t \t Table patient";
-	cout << "\n \t \t \t \t \t \t Sort by diagnosis";
-	cout << "\n \t \t \t \t \t \t Sample";
-	cout << "\n \t \t \t \t \t |-->>:>>List written out";
-	cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
-	cout << "\n \t \t \t \t \t \t Coust treatment";
-	cout << "\n \t \t \t \t \t \t Exit";
+	cout << "\n \t \t \t \t \t [~]  All patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Add patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Sort by diagnosis                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Serch patient                          [~]";
+	cout << "\n \t \t \t \t \t [~]  Select patients by day and diagnosis   [~]";
+	cout << "\n \t \t \t \t \t [~]  List written out                       [~]";
+	cout << "\n \t \t \t \t \t [~]  Number of patients in wards            [~]";
+	cout << "\n \t \t \t \t \t [~]  Cost treatment                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient discharge last year     [~]";
+	cout << "\n \t \t \t \t     >>>      Table of patients                          <<<";
+	cout << "\n \t \t \t \t \t [~]  Check for treatment                    [~]";
+	cout << "\n \t \t \t \t \t [~]  Doc data                               [~]";
+	cout << "\n \t \t \t \t \t [~]  Save data                              [~]";
+	cout << "\n \t \t \t \t \t [~]  Exit                                   [~]";
 }
 void Menu::HomeScr12()
 {
@@ -275,20 +287,21 @@ void Menu::HomeScr12()
 	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
 	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
 	cout << "\n\n\n\n";
-	cout << "\n \t \t \t \t \t \t Add patient";
-	cout << "\n \t \t \t \t \t \t Delete patient";
-	cout << "\n \t \t \t \t \t \t All patient";
-	cout << "\n \t \t \t \t \t \t Save data";;
-	cout << "\n \t \t \t \t \t \t Doc data";
-	cout << "\n \t \t \t \t \t \t Serch data";
-	cout << "\n \t \t \t \t \t \t Patient in palata";
-	cout << "\n \t \t \t \t \t \t Table patient";
-	cout << "\n \t \t \t \t \t \t Sort by diagnosis";
-	cout << "\n \t \t \t \t \t \t Sample";
-	cout << "\n \t \t \t \t \t \t List written out";
-	cout << "\n \t \t \t \t \t |-->>:>>Delete patient discharge last year";
-	cout << "\n \t \t \t \t \t \t Coust treatment";
-	cout << "\n \t \t \t \t \t \t Exit";
+	cout << "\n \t \t \t \t \t [~]  All patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Add patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Sort by diagnosis                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Serch patient                          [~]";
+	cout << "\n \t \t \t \t \t [~]  Select patients by day and diagnosis   [~]";
+	cout << "\n \t \t \t \t \t [~]  List written out                       [~]";
+	cout << "\n \t \t \t \t \t [~]  Number of patients in wards            [~]";
+	cout << "\n \t \t \t \t \t [~]  Cost treatment                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient discharge last year     [~]";
+	cout << "\n \t \t \t \t \t [~]  Table of patients                      [~]";
+	cout << "\n \t \t \t \t     >>>      Check for treatment                        <<<";
+	cout << "\n \t \t \t \t \t [~]  Doc data                               [~]";
+	cout << "\n \t \t \t \t \t [~]  Save data                              [~]";
+	cout << "\n \t \t \t \t \t [~]  Exit                                   [~]";
 }
 void Menu::HomeScr13()
 {
@@ -297,20 +310,21 @@ void Menu::HomeScr13()
 	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
 	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
 	cout << "\n\n\n\n";
-	cout << "\n \t \t \t \t \t \t Add patient";
-	cout << "\n \t \t \t \t \t \t Delete patient";
-	cout << "\n \t \t \t \t \t \t All patient";
-	cout << "\n \t \t \t \t \t \t Save data";;
-	cout << "\n \t \t \t \t \t \t Doc data";
-	cout << "\n \t \t \t \t \t \t Serch data";
-	cout << "\n \t \t \t \t \t \t Patient in palata";
-	cout << "\n \t \t \t \t \t \t Table patient";
-	cout << "\n \t \t \t \t \t \t Sort by diagnosis";
-	cout << "\n \t \t \t \t \t \t Sample";
-	cout << "\n \t \t \t \t \t \t List written out";
-	cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
-	cout << "\n \t \t \t \t \t |-->>:>>Coust treatment";
-	cout << "\n \t \t \t \t \t \t Exit";
+	cout << "\n \t \t \t \t \t [~]  All patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Add patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Sort by diagnosis                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Serch patient                          [~]";
+	cout << "\n \t \t \t \t \t [~]  Select patients by day and diagnosis   [~]";
+	cout << "\n \t \t \t \t \t [~]  List written out                       [~]";
+	cout << "\n \t \t \t \t \t [~]  Number of patients in wards            [~]";
+	cout << "\n \t \t \t \t \t [~]  Cost treatment                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient discharge last year     [~]";
+	cout << "\n \t \t \t \t \t [~]  Table of patients                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Check for treatment                    [~]";
+	cout << "\n \t \t \t \t     >>>      Doc data                                   <<<";
+	cout << "\n \t \t \t \t \t [~]  Save data                              [~]";
+	cout << "\n \t \t \t \t \t [~]  Exit                                   [~]";
 }
 void Menu::HomeScr14()
 {
@@ -319,21 +333,46 @@ void Menu::HomeScr14()
 	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
 	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
 	cout << "\n\n\n\n";
-	cout << "\n \t \t \t \t \t \t Add patient";
-	cout << "\n \t \t \t \t \t \t Delete patient";
-	cout << "\n \t \t \t \t \t \t All patient";
-	cout << "\n \t \t \t \t \t \t Save data";;
-	cout << "\n \t \t \t \t \t \t Doc data";
-	cout << "\n \t \t \t \t \t \t Serch data";
-	cout << "\n \t \t \t \t \t \t Patient in palata";
-	cout << "\n \t \t \t \t \t \t Table patient";
-	cout << "\n \t \t \t \t \t \t Sort by diagnosis";
-	cout << "\n \t \t \t \t \t \t Sample";
-	cout << "\n \t \t \t \t \t \t List written out";
-	cout << "\n \t \t \t \t \t \t Delete patient discharge last year";
-	cout << "\n \t \t \t \t \t \t Coust treatment";
-	cout << "\n \t \t \t \t \t |-->>:>>Exit";
+	cout << "\n \t \t \t \t \t [~]  All patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Add patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Sort by diagnosis                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Serch patient                          [~]";
+	cout << "\n \t \t \t \t \t [~]  Select patients by day and diagnosis   [~]";
+	cout << "\n \t \t \t \t \t [~]  List written out                       [~]";
+	cout << "\n \t \t \t \t \t [~]  Number of patients in wards            [~]";
+	cout << "\n \t \t \t \t \t [~]  Cost treatment                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient discharge last year     [~]";
+	cout << "\n \t \t \t \t \t [~]  Table of patients                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Check for treatment                    [~]";
+	cout << "\n \t \t \t \t \t [~]  Doc data                               [~]";
+	cout << "\n \t \t \t \t     >>>      Save data                                  <<<";
+	cout << "\n \t \t \t \t \t [~]  Exit                                   [~]";
 }
+void Menu::HomeScr15()
+{
+	system("cls");
+	cout << endl;
+	cout << " Course Project \t \t \t \t\t \t \t \t\t \t Final Project" << endl;
+	cout << " Subject area - hospital. \t \t \t \t\t \t \t \t\t Anton Kozyar" << endl;
+	cout << "\n\n\n\n";
+	cout << "\n \t \t \t \t \t [~]  All patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Add patient                            [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Sort by diagnosis                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Serch patient                          [~]";
+	cout << "\n \t \t \t \t \t [~]  Select patients by day and diagnosis   [~]";
+	cout << "\n \t \t \t \t \t [~]  List written out                       [~]";
+	cout << "\n \t \t \t \t \t [~]  Number of patients in wards            [~]";
+	cout << "\n \t \t \t \t \t [~]  Cost treatment                         [~]";
+	cout << "\n \t \t \t \t \t [~]  Delete patient discharge last year     [~]";
+	cout << "\n \t \t \t \t \t [~]  Table of patients                      [~]";
+	cout << "\n \t \t \t \t \t [~]  Check for treatment                    [~]";
+	cout << "\n \t \t \t \t \t [~]  Doc data                               [~]";
+	cout << "\n \t \t \t \t \t [~]  Save data                              [~]";
+	cout << "\n \t \t \t \t     >>>      Exit                                       <<<";
+}
+
 int Menu::Home()
 {
 	char key;
@@ -346,7 +385,7 @@ int Menu::Home()
 		if (key == 'P') // key = Down
 		{
 			flag++;
-			if (flag > 14)  flag = 1;
+			if (flag > 15)  flag = 1;
 			if (flag == 1) HomeScr1();
 			else if (flag == 2) HomeScr2();
 			else if (flag == 3) HomeScr3();
@@ -361,12 +400,13 @@ int Menu::Home()
 			else if (flag == 12) HomeScr12();
 			else if (flag == 13) HomeScr13();
 			else if (flag == 14) HomeScr14();
+			else if (flag == 15) HomeScr15();
 
 		}
 		else if (key == 72) // key = Up
 		{
 			flag--;
-			if (flag < 1)  flag = 14;
+			if (flag < 1)  flag = 15;
 			if (flag == 1) HomeScr1();
 			else if (flag == 2) HomeScr2();
 			else if (flag == 3) HomeScr3();
@@ -381,6 +421,7 @@ int Menu::Home()
 			else if (flag == 12) HomeScr12();
 			else if (flag == 13) HomeScr13();
 			else if (flag == 14) HomeScr14();
+			else if (flag == 15) HomeScr15();
 		}
 		else if (key == 13 || key == 10) // key = enter
 		{
