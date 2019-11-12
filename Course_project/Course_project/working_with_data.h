@@ -5,9 +5,11 @@
 #include<fstream>
 #include"Doctor_data.h"
 #include"Patient_data.h"
+#include"Menu.h"
 using namespace std;
 
 
+void SetColor(int text, int background);
 
 void Fill_Data(Patient*& data, string path, int& Size);
 
@@ -43,4 +45,8 @@ void Sort_diagnosis(Patient *data, int& Size);
 
 void Account_for_treatment(Patient *data, int& Size);
 
+void Add_new_patuent(Patient *&data, int &Size);
+
 void Authorization();
+
+void Exit(string path, Patient*& data, int& Size, Menu &menu);

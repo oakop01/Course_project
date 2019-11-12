@@ -1,10 +1,13 @@
 #include<iostream>
 #include<windows.h>
+#include<conio.h>
+#include<fstream>
+#include<iomanip>
 #include"working_with_data.h"
 #include"Doctor_data.h"
 #include"Patient_data.h"
-#include<fstream>
-#include<iomanip>
+#include"Menu.h"
+
 
 using namespace std;
 
@@ -83,7 +86,6 @@ void Fill_Doc(Doctor*& doc, string path2, int& Size)
 
 	else {
 		readFile.getline(tmp, 255);
-		//Size = atoi(tmp);
 		doc = new Doctor[3];
 
 		for (int i = 0; i < 3; i++) {
@@ -139,9 +141,14 @@ void Add_Patient(Patient*& data, Patient data2, int& Size)
 void Delete_data(Patient*& data, int& Size)
 {
 	int id=0;
+	SetColor(10, 0);
+	cout << "\n\n\n\n==================================" << endl;
+	SetColor(15, 0);
 	cout << "\n\n\n\n [~] Enter id patient: ";
 	cin >> id;
-
+	SetColor(10, 0);
+	cout << "\n==================================\n" << endl;
+	SetColor(15, 0);
 	Patient* newData = new Patient[Size-1];
 	
 	for (int i = 0; i < Size-1; i++)
@@ -176,7 +183,7 @@ void Delete_data(Patient*& data, int& Size)
 	data = newData;
 	Size--;
 	cout << "\n\n\n\n";
-
+	SetColor(14, 0);
 	for (int i = 1; i < 10; ++i) {
 		Sleep(50);
 		cout << "\t\t\t\t\t [~] Data Delete... [ \\ ]\r";
@@ -187,6 +194,7 @@ void Delete_data(Patient*& data, int& Size)
 		Sleep(50);
 		cout << "\t\t\t\t\t [~] Data Delete... [ - ]\r";
 	}
+	SetColor(15, 0);
 	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
 
 }
@@ -197,9 +205,13 @@ void Coust_treatment(Patient* data, int& Size)
 	int tmp = 0;
 	bool exit = false;
 
+	SetColor(10, 0);
+	cout << "\n\n\n\n==================================" << endl;
+	SetColor(15, 0);
+
 	while (!exit) {
 
-		cout << "\n\n\n\n [~] Enter ID patient: ";
+		cout << "\n [~] Enter ID patient: ";
 		cin >> id;
 
 		if (id >= 0 && id <= Size)
@@ -209,6 +221,9 @@ void Coust_treatment(Patient* data, int& Size)
 		else
 			cout << "\n [!] Try again!";
 	}
+	SetColor(10, 0);
+	cout << "\n==================================" << endl;
+	SetColor(15, 0);
 	for (int i = 0; i < Size; i++)
 	{
 		if (data[i].id == id)
@@ -229,11 +244,52 @@ void Coust_treatment(Patient* data, int& Size)
 
 void Delete_patient_discharge_last_year(Patient *&data, int& Size)
 {
-	cout << "\n\n\n\n [~] Delete data..." << endl;
-	
+		
 	int id = 0;
+	int tmp = 0;
 
 	for (int i = 0; i < Size; i++)
+	{
+		if (data[i].year_of_discharge <= 2018)
+			tmp++;
+	}
+
+	for(int i=0; i<tmp; i++)
+	{
+		id = 0;
+
+		for (int i = 0; i < Size; i++)		{
+			if (data[i].year_of_discharge <= 2018) {
+				id = i;
+			}
+		}
+
+		Patient* newData = new Patient[Size - 1];
+
+		for (int i = 0; i < Size - 1; i++)
+		{
+			if (i != id) {
+				Data_overwrite(newData[i], data[i]);
+			}
+		}
+
+		for (int i = id; i < Size - 1; i++) {
+			Data_overwrite(newData[i], data[i + 1]);
+		}
+
+		for (int i = 0; i < Size - 1; i++) {
+			newData[i].id = i;
+		}
+
+		delete[] data;
+		data = newData;
+		Size--;
+
+		
+	}
+	
+
+	/*for (int i = 0; i < Size; i++)
 	{
 		if (data[i].year_of_discharge <= 2018){		
 			id = i;
@@ -273,9 +329,22 @@ void Delete_patient_discharge_last_year(Patient *&data, int& Size)
 
 	delete[] data;
 	data = newData;
-	Size--;
+	Size--;*/
 
-	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
+	cout << "\n\n\n\n";
+	SetColor(14, 0);
+	for (int i = 1; i < 10; ++i) {
+		Sleep(50);
+		cout << "\t\t\t\t\t [~] Data Delete... [ \\ ]\r";
+		Sleep(50);
+		cout << "\t\t\t\t\t [~] Data Delete... [ | ]\r";
+		Sleep(50);
+		cout << "\t\t\t\t\t [~] Data Delete... [ / ]\r";
+		Sleep(50);
+		cout << "\t\t\t\t\t [~] Data Delete... [ - ]\r";
+	}
+	SetColor(15, 0);
+	cout << "\n\n\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
 
 }
 
@@ -285,8 +354,12 @@ void List_written_out(Patient* data, int& Size)
 	int tmp = 0;
 	bool exit = false;
 
+	SetColor(10, 0);
+	cout << "\n\n\n\n==================================" << endl;
+	SetColor(15, 0);
+
 	while (!exit) {
-		cout << "\n\n\n\n [~] Enter day: ";
+		cout << "\n [~] Enter day: ";
 		cin >> day;
 		if (day > 0 && day <= 31)
 			exit = true;
@@ -294,6 +367,9 @@ void List_written_out(Patient* data, int& Size)
 			cout << "\n [!] Try againe!";
 	}
 	cout << endl;
+	SetColor(10, 0);
+	cout << "\n==================================" << endl;
+	SetColor(15, 0);
 	for (int i = 0; i < Size; i++)	{
 		if (data[i].day_of_discharge == day)		{
 			tmp++;
@@ -315,8 +391,12 @@ void Sample(Patient* data, int& Size)
 	int tmp = 0;
 	bool exit = false;
 
+	SetColor(10, 0);
+	cout << "\n\n\n\n==================================" << endl;
+	SetColor(15, 0);
+
 	while (!exit) {
-		cout << "\n\n\n\n [~] Enter day: ";
+		cout << "\n [~] Enter day: ";
 		cin >> day;
 		if (day > 0 && day <= 31)
 			exit = true;
@@ -326,7 +406,9 @@ void Sample(Patient* data, int& Size)
 
 	cout << "\n [~] Enter diagnosis: ";
 	cin >> diagnosis;
-
+	SetColor(10, 0);
+	cout << "\n==================================" << endl;
+	SetColor(15, 0);
 	for (int i = 0; i < Size; i++)	{
 		if (data[i].day_of_receipt == day && data[i].diagnosis == diagnosis){
 			tmp++;
@@ -344,7 +426,7 @@ void Sample(Patient* data, int& Size)
 void Save_Data(string path, Patient*& data, int& Size)
 {
 	cout << "\n\n\n\n";
-
+	SetColor(14, 0);
 	for (int i = 1; i < 10; ++i)	{
 		Sleep(70);
 		cout << "\t\t\t\t\t [~] Data Save... [ \\ ]\r";	
@@ -355,7 +437,7 @@ void Save_Data(string path, Patient*& data, int& Size)
 		Sleep(70);
 		cout << "\t\t\t\t\t [~] Data Save... [ - ]\r";
 	}
-	
+	SetColor(15, 0);
 	ofstream writeFile;
 	writeFile.open(path);
 
@@ -391,11 +473,15 @@ void Save_Data(string path, Patient*& data, int& Size)
 
 void Print_Data(Patient* data, int& Size)
 {
-	cout << "\n\n\n\n ==================================" << endl;
+	SetColor(10, 0);
+	cout << "\n\n\n\n==================================" << endl;
+	SetColor(15, 0);
 	for (int i = 0; i < Size; i++) {
 		cout << "\n ID [ " << data[i].id << " ]" << endl;
 		data[i].ShowData();
+		SetColor(10, 0);
 		cout << "\n==================================" << endl;
+		SetColor(15, 0);
 	}
 
 	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
@@ -403,11 +489,15 @@ void Print_Data(Patient* data, int& Size)
 
 void Print_Doc(Doctor* doc, int& Size)
 {
+	SetColor(10, 0);
 	cout << "\n\n\n\n==================================" << endl;
+	SetColor(15, 0);
 	for (int i = 0; i < 3; i++) {
 		cout << "\n";
 		doc[i].ShowData();
+		SetColor(10, 0);
 		cout << "\n==================================" << endl;
+		SetColor(15, 0);
 	}
 
 	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
@@ -416,10 +506,14 @@ void Print_Doc(Doctor* doc, int& Size)
 void Serch_data(Patient* data, int& Size)
 {
 	int id = 0;
+	SetColor(10, 0);
 	cout << "\n\n\n\n==================================" << endl;
+	SetColor(15, 0);
 	cout << "\n [~] Enter id patient to serch: ";
 	cin >> id;
-	cout << "\n";
+	SetColor(10, 0);
+	cout << "\n==================================\n" << endl;
+	SetColor(15, 0);
 	bool exit = false;
 
 	for (int i = 0; i < Size; i++)	{
@@ -441,8 +535,15 @@ void Serch_in_palata(Patient*& data, Doctor*& doc, int& Size)
 	int pal = 0;
 	int num = 1;
 
-	cout << "\n\n\n\n [~] Enter # palata: ";
+
+	SetColor(10, 0);
+	cout << "\n\n\n\n==================================" << endl;
+	SetColor(15, 0);
+	cout << "\n [~] Enter # palata: ";
 	cin >> pal;
+	SetColor(10, 0);
+	cout << "\n==================================" << endl;
+	SetColor(15, 0);
 
 	if (pal <=3) {
 
@@ -453,7 +554,15 @@ void Serch_in_palata(Patient*& data, Doctor*& doc, int& Size)
 			}
 		}
 		cout << "\n [ " << index << " ] patient in palata\n\n";
-		cout << " #"<<setw(12)<<" Name" << setw(11)<<"Surname"<<setw(13)<< "Diagnosis" << setw(12) << "Healing"  << "\n====================================================\n\n";
+
+		SetColor(10, 0);
+		cout << "==================================\n\n" << endl;
+		SetColor(15, 0);
+
+		cout << " #" << setw(12) << " Name" << setw(11) << "Surname" << setw(13) << "Diagnosis" << setw(12) << "Healing\n";
+		SetColor(10, 0);
+		cout<<"____________________________________________________\n\n";
+		SetColor(15, 0);
 		for (int i = 0; i < Size; i++){
 			if (data[i].palata == pal){
 				
@@ -470,17 +579,22 @@ void Serch_in_palata(Patient*& data, Doctor*& doc, int& Size)
 
 void Table_patient(Patient* data, int& Size)
 {
-	cout << "\n\n\n Palata" << setw(10) << "Name" << setw(15) << "Surname" << setw(20) << "Data of receipt" << setw(15) << "Diagnosis" << setw(13) << "Healing" << setw(22) << "Insurance policy" << setw(23)
+	
+	cout << "\n\n\n\n\n Palata" << setw(10) << "Name" << setw(15) << "Surname" << setw(20) << "Data of receipt" << setw(15) << "Diagnosis" << setw(13) << "Healing" << setw(22) << "Insurance policy" << setw(23)
 		<< "Coust of treatment" <<
-		setw(22) << "Date of discharge\n" << "___________________________________________________________________________________________________________________________________________________" << endl;
-
+		setw(22) << "Date of discharge\n";
+	SetColor(10, 0);
+	cout<<"___________________________________________________________________________________________________________________________________________________" << endl;	
+	SetColor(15, 0);
 	for (int i = 0; i < Size; i++)
 	{
 		cout << "  [" << data[i].palata << "]" << setw(12) << data[i].name << setw(15) << data[i].surname << setw(12) << data[i].day_of_receipt << "." << data[i].months_of_receipt << "." << data[i].year_of_receipt << setw(15) << data[i].diagnosis << setw(15)
 			<< data[i].healing <<
 			setw(20) << data[i].insurance_policy << setw(15) << data[i].cost_of_treatment<<" $" << setw(17) << data[i].day_of_discharge << "." << data[i].months_of_discharge << "." << data[i].year_of_discharge << endl;
 	}
+	SetColor(10, 0);
 	cout<< "___________________________________________________________________________________________________________________________________________________" << endl;
+	SetColor(15, 0);
 	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
 }
 
@@ -500,11 +614,17 @@ void Sort_diagnosis(Patient* data, int& Size)
 		}
 	}
 
+	SetColor(10, 0);
+	cout << "\n\n\n\n=============================" << endl;
+	SetColor(15, 0);
+
 	for (int i = 0; i < Size; i++)
 	{	
 		cout << "\n ID [ " << data[i].id << " ]" << endl;
 		data[i].ShowData();
+		SetColor(10, 0);
 		cout << "\n=============================" << endl;
+		SetColor(15, 0);
 	}
 
 	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;	
@@ -513,34 +633,175 @@ void Sort_diagnosis(Patient* data, int& Size)
 
 void Account_for_treatment(Patient* data, int& Size)
 {
-	cout << "\n\n\n ID "<<setw(10)<<"Name" << setw(15) << "Surname" << setw(15) << "Diagnosis" << setw(20) << "Insurance policy" << setw(20) << "Coust of treatment" <<
-		 "\n______________________________________________________________________________________" << endl;
+	cout << "\n\n\n\n ID " << setw(10) << "Name" << setw(15) << "Surname" << setw(15) << "Diagnosis" << setw(20) << "Insurance policy" << setw(20) << "Coust of treatment" << endl;
+	SetColor(10, 0);	
+	cout<<"______________________________________________________________________________________" << endl;
+	SetColor(15, 0);
 
 	for (int i = 0; i < Size; i++)
 	{
 		cout <<" ["<<data[i].id<<"]"<<setw(10)<< data[i].name << setw(15) << data[i].surname << setw(13) << data[i].diagnosis << setw(20)
 		<< data[i].insurance_policy << setw(13) << data[i].cost_of_treatment <<" $" << endl;
 	}
+	cout << "\n\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
+}
+
+void Add_new_patuent(Patient *&data, int &Size)
+{
+	Patient data2;
+
+	SetColor(10, 0);
+	cout << "\n\n\n\n==================================" << endl;
+	SetColor(15, 0);
+	cout << "\n\t [Add new patient] " << endl;
+	cout << "\n ID: " << Size;
+	data2.id = Size;
+	
+	SetColor(14, 0);
+	cout << "\n\n Name: ";
+	cin >> data2.name;
+
+	cout << " Surname: ";
+	cin >> data2.surname;
+
+	cout << "\n\t [Data of receipt]" << endl;
+	
+	cout << " Day:";
+	cin >> data2.day_of_receipt;
+	cout << " Months:";
+	cin >> data2.months_of_receipt;
+	cout << " Year:";
+	cin >> data2.year_of_receipt;
+
+	cout << " Diagnosis: ";
+	cin >> data2.diagnosis;
+
+	cout << " Healing: ";
+	cin >> data2.healing;
+
+	cout << " Palata: ";
+	cin >> data2.palata;
+
+	cout << " Insurance policy: ";
+	cin >> data2.insurance_policy;
+
+	cout << " Coust of treatment: ";
+	cin >> data2.cost_of_treatment;
+
+	cout << "\n\t [Date of discharge]" << endl;
+	cout << " Day:";
+	cin >> data2.day_of_discharge;
+	cout << " Months:";
+	cin >> data2.months_of_discharge;
+	cout << " Year:";
+	cin >> data2.year_of_discharge;
+
+	SetColor(15, 0);
+
 	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
+
+	Add_Patient(data, data2, Size);
+
 }
 
 void Authorization() 
 {
 	string login;
 	string pass;
+	int log = 0;
+	int pas = 0;
+	int sum = 0;
+	bool exit = false;
 	
-		cout << "\n\n\n\n\n\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
-		cout << "\n\n\n\t\t\t\tWELCOME TO HOSPITAL " << endl;
-			
-
-		cout << "\n\n\t\t LOGIN : ";
+	
+	while (!exit)
+	{
+		system("cls");
+		log = pas = 0;
+		SetColor(10, 0);
+		cout << "\n\n\n\n\n\n\t\t\t\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+		cout << "\n\n\n\t\t\t\t\t\t\tWELCOME TO HOSPITAL " << endl;
+		cout << "\n\t\t\t\t\t\t\t  [ doc | doc ]";
+		cout << "\n\n\n\t\t\t\t\t\tLOGIN : ";
 		cin >> login;
-		
-
-		cout << "\t\t PASSWORD : ";
+		cout << "\n\t\t\t\t\t\tPASSWORD : ";
 		cin >> pass;
-		
+
+		if (login == "doc"){
+			log = 1;
+		}
+		if (pass == "doc"){
+			pas = 1;
+		}
+		sum = log + pas;
+		if (sum == 2){
+			exit = true;
+		}
+		else {
+			SetColor(14, 0);
+			cout << "\n\n\t\t\t\t\t[!] Login or Passworg is not corect. Try again  [!]";
+			SetColor(10, 0);
+			cout << "\n\n\t\t\t\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+			SetColor(15, 0);
+			Sleep(1500);
+		}
+
+		SetColor(15, 0);		
+
+	}
+}
+
+void Exit(string path, Patient*& data, int& Size, Menu &menu)
+{
+	char key;
+	system("cls");	
+	SetColor(14, 0);
+	cout <<"\n\n\n\n\n\t\t\t\t\t[!]\t\tSAVE DATA?\t\t[!]"; 
+	cout<< "\n\n \t\t\t\t\t   Press 'ENTER' to Save, 'ESC' to Cancel" << endl;
+	key = _getch();
 	
-	
-	
+	if ((key == 10) || (key == 13)) {
+
+		cout << "\n\n";
+	for (int i = 1; i < 10; ++i) {
+		Sleep(70);
+		cout << "\t\t\t\t\t\t [~] Data Save... [ \\ ]\r";
+		Sleep(70);
+		cout << "\t\t\t\t\t\t [~] Data Save... [ | ]\r";
+		Sleep(70);
+		cout << "\t\t\t\t\t\t [~] Data Save... [ / ]\r";
+		Sleep(70);
+		cout << "\t\t\t\t\t\t [~] Data Save... [ - ]\r";
+	}
+	cout << "\n\n";
+		SetColor(15, 0);
+		ofstream writeFile;
+		writeFile.open(path);
+
+		if (!writeFile.is_open())	{
+			cout << " [!] Can't save file!" << endl;
+		}
+		else {
+			writeFile << Size << endl;
+		for (int i = 0; i < Size; i++){
+			writeFile << data[i].id << endl;
+			writeFile << data[i].name << endl;
+			writeFile << data[i].surname << endl;
+			writeFile << data[i].day_of_receipt << endl;
+			writeFile << data[i].months_of_receipt << endl;
+			writeFile << data[i].year_of_receipt << endl;
+			writeFile << data[i].diagnosis << endl;
+			writeFile << data[i].healing << endl;
+			writeFile << data[i].palata << endl;
+			writeFile << data[i].insurance_policy << endl;
+			writeFile << data[i].cost_of_treatment << endl;
+			writeFile << data[i].day_of_discharge << endl;
+			writeFile << data[i].months_of_discharge << endl;
+			writeFile << data[i].year_of_discharge << endl;
+		}
+	}
+		writeFile.close();		
+	}
+
+	menu.endfile();
 }
