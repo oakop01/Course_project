@@ -24,6 +24,8 @@ int main()
 	Fill_Data(data, path, Size);
 	Fill_Doc(doc, path2, Size);
 
+	Authorization();
+
 	Menu menu;
 	menu.HomeScr();
 	int index = 0;
@@ -84,7 +86,6 @@ int main()
 		}
 		else if (index == 3){
 			Delete_data(data, Size);
-			Print_Data(data, Size);
 		}
 		else if (index == 4) {
 			Sort_diagnosis(data, Size);			

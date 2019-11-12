@@ -5,6 +5,7 @@
 #include"Patient_data.h"
 #include<fstream>
 #include<iomanip>
+
 using namespace std;
 
 void Fill_Data(Patient*& data, string path, int& Size)
@@ -174,6 +175,19 @@ void Delete_data(Patient*& data, int& Size)
 	delete[] data;
 	data = newData;
 	Size--;
+	cout << "\n\n\n\n";
+
+	for (int i = 1; i < 10; ++i) {
+		Sleep(50);
+		cout << "\t\t\t\t\t [~] Data Delete... [ \\ ]\r";
+		Sleep(50);
+		cout << "\t\t\t\t\t [~] Data Delete... [ | ]\r";
+		Sleep(50);
+		cout << "\t\t\t\t\t [~] Data Delete... [ / ]\r";
+		Sleep(50);
+		cout << "\t\t\t\t\t [~] Data Delete... [ - ]\r";
+	}
+	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
 
 }
 
@@ -209,49 +223,59 @@ void Coust_treatment(Patient* data, int& Size)
 	{
 		cout << " [!] No patient ID " << id << endl;
 	}
+	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
 
 }
 
-void Delete_patient_discharge_last_year(Patient *data, int& Size)
+void Delete_patient_discharge_last_year(Patient *&data, int& Size)
 {
 	cout << "\n\n\n\n [~] Delete data..." << endl;
-	int tmp = 0;
+	
 	int id = 0;
-
 
 	for (int i = 0; i < Size; i++)
 	{
-		if (data[i].year_of_discharge <= 2018)
-		{
-			tmp++;//кількість пацієнтів виписатих торік
+		if (data[i].year_of_discharge <= 2018){		
 			id = i;
 		}
 	}
+	cout << "\n Patient delete ID: " << id;
 
-	cout << " [~] Patient count >>> " << tmp << endl;
+	Patient* newData = new Patient[Size - 1];
 
-	Patient* newData = new Patient[Size - tmp];
-
-	for (int i = 0; i < Size-tmp; i++)
+	for (int i = 0; i < Size - 1; i++)
 	{
-		if (i != id)
-		{
-			Data_overwrite(newData[i], data[i]);
+		if (i != id) {
+			newData[i].id = data[i].id;
+			newData[i].name = data[i].name;
+			newData[i].surname = data[i].surname;
+			newData[i].day_of_receipt = data[i].day_of_receipt;
+			newData[i].months_of_receipt = data[i].months_of_receipt;
+			newData[i].year_of_receipt = data[i].year_of_receipt;
+			newData[i].diagnosis = data[i].diagnosis;
+			newData[i].healing = data[i].healing;
+			newData[i].palata = data[i].palata;
+			newData[i].insurance_policy = data[i].insurance_policy;
+			newData[i].cost_of_treatment = data[i].cost_of_treatment;
+			newData[i].day_of_discharge = data[i].day_of_discharge;
+			newData[i].months_of_discharge = data[i].months_of_discharge;
+			newData[i].year_of_discharge = data[i].year_of_discharge;
 		}
 	}
 
-	for (int i = id; i < Size - tmp; i++) {
-		Data_overwrite(newData[i], data[i + 1]);
+	for (int i = id; i < Size - 1; i++) {
+		Data_overwrite(newData[i], data[i+1]);
 	}
 
-	for (int i = 0; i < Size - tmp; i++) {
+	for (int i = 0; i < Size - 1; i++) {
 		newData[i].id = i;
 	}
-	
-	
-	/*delete[] data;
-	data = newData;*/
-	Size -= tmp;
+
+	delete[] data;
+	data = newData;
+	Size--;
+
+	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
 
 }
 
@@ -279,6 +303,8 @@ void List_written_out(Patient* data, int& Size)
 	if (tmp == 0)	{
 		cout << " [!] No patient to discharge" << endl;
 	}
+
+	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
 
 }
 
@@ -311,6 +337,8 @@ void Sample(Patient* data, int& Size)
 	if (tmp == 0)	{
 		cout << "\n\n [!] No patient in this day and diagnosis" << endl;
 	}
+
+	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
 }
 
 void Save_Data(string path, Patient*& data, int& Size)
@@ -357,6 +385,8 @@ void Save_Data(string path, Patient*& data, int& Size)
 	}
 	writeFile.close();
 	cout << endl;
+
+	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
 }
 
 void Print_Data(Patient* data, int& Size)
@@ -367,6 +397,8 @@ void Print_Data(Patient* data, int& Size)
 		data[i].ShowData();
 		cout << "\n==================================" << endl;
 	}
+
+	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
 }
 
 void Print_Doc(Doctor* doc, int& Size)
@@ -377,6 +409,8 @@ void Print_Doc(Doctor* doc, int& Size)
 		doc[i].ShowData();
 		cout << "\n==================================" << endl;
 	}
+
+	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
 }
 
 void Serch_data(Patient* data, int& Size)
@@ -397,6 +431,8 @@ void Serch_data(Patient* data, int& Size)
 	if (!exit){
 		cout << " [~] No serch patient with this >>> " << id << " ID." << endl;
 	}
+
+	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
 }
 
 void Serch_in_palata(Patient*& data, Doctor*& doc, int& Size)
@@ -428,6 +464,8 @@ void Serch_in_palata(Patient*& data, Doctor*& doc, int& Size)
 	else {
 		cout << " [~] No palata # " << pal << endl;
 	}
+
+	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
 }
 
 void Table_patient(Patient* data, int& Size)
@@ -443,6 +481,7 @@ void Table_patient(Patient* data, int& Size)
 			setw(20) << data[i].insurance_policy << setw(15) << data[i].cost_of_treatment<<" $" << setw(17) << data[i].day_of_discharge << "." << data[i].months_of_discharge << "." << data[i].year_of_discharge << endl;
 	}
 	cout<< "___________________________________________________________________________________________________________________________________________________" << endl;
+	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
 }
 
 void Sort_diagnosis(Patient* data, int& Size)
@@ -468,7 +507,7 @@ void Sort_diagnosis(Patient* data, int& Size)
 		cout << "\n=============================" << endl;
 	}
 
-	
+	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;	
 
 }
 
@@ -482,4 +521,26 @@ void Account_for_treatment(Patient* data, int& Size)
 		cout <<" ["<<data[i].id<<"]"<<setw(10)<< data[i].name << setw(15) << data[i].surname << setw(13) << data[i].diagnosis << setw(20)
 		<< data[i].insurance_policy << setw(13) << data[i].cost_of_treatment <<" $" << endl;
 	}
+	cout << "\n\n\t\t\t\t\t\t Enter [^]  back to menu." << endl;
+}
+
+void Authorization() 
+{
+	string login;
+	string pass;
+	
+		cout << "\n\n\n\n\n\n\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+		cout << "\n\n\n\t\t\t\tWELCOME TO HOSPITAL " << endl;
+			
+
+		cout << "\n\n\t\t LOGIN : ";
+		cin >> login;
+		
+
+		cout << "\t\t PASSWORD : ";
+		cin >> pass;
+		
+	
+	
+	
 }

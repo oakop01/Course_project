@@ -21,7 +21,7 @@ void Delete_data(Patient*& data, int& Size);
 
 void Coust_treatment(Patient *data, int& Size);
 
-void Delete_patient_discharge_last_year(Patient *data, int& Size);
+void Delete_patient_discharge_last_year(Patient *&data, int& Size);
 
 void List_written_out(Patient *data, int& Size);
 
@@ -42,3 +42,5 @@ void Table_patient(Patient *data, int& Size);
 void Sort_diagnosis(Patient *data, int& Size);
 
 void Account_for_treatment(Patient *data, int& Size);
+
+void Authorization();
