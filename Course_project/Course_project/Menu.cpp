@@ -573,6 +573,7 @@ int Menu::Home()
 void Menu::endfile()
 {	
 	char key;
+	system("cls");
 	SetColor(10, 0);
 	cout << "\n \n \t \t \t \t \t     Are you sure you want to Exit ?";
 	cout << "\n \n \t \t \t \t \t Press 'ENTER' to Exit , 'ESC' to Cancel";

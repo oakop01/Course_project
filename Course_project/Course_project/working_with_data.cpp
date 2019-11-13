@@ -355,9 +355,16 @@ void List_written_out(Patient* data, int& Size)
 	bool exit = false;
 
 	SetColor(10, 0);
-	cout << "\n\n\n\n==================================" << endl;
+	cout << "\n\n\n\n=====================================================" << endl;	
+	cout << " Date of discharge that is : ";
+	for (int i = 0; i < Size; i++){
+		if (data[i].day_of_discharge == data[i + 1].day_of_discharge)		{
+			continue;
+		}				
+		cout <<" | " <<  data[i].day_of_discharge;
+	}
+	cout << " |\n=====================================================" << endl;
 	SetColor(15, 0);
-
 	while (!exit) {
 		cout << "\n [~] Enter day: ";
 		cin >> day;
@@ -368,7 +375,7 @@ void List_written_out(Patient* data, int& Size)
 	}
 	cout << endl;
 	SetColor(10, 0);
-	cout << "\n==================================" << endl;
+	cout << "=====================================================\n" << endl;
 	SetColor(15, 0);
 	for (int i = 0; i < Size; i++)	{
 		if (data[i].day_of_discharge == day)		{
@@ -392,9 +399,27 @@ void Sample(Patient* data, int& Size)
 	bool exit = false;
 
 	SetColor(10, 0);
-	cout << "\n\n\n\n==================================" << endl;
+	cout << "\n\n\n\n=================================================================================================" << endl;
+	cout << " Date of receipt that is : ";
+	for (int i = 0; i < Size; i++) {
+		if (data[i].day_of_receipt == data[i + 1].day_of_receipt) {
+			continue;
+		}
+		cout << " | " << data[i].day_of_receipt;
+	}
+	cout << " |\n\n";
+	cout << " Diagnosis that is : ";
+	for (int i = 0; i < Size; i++) {
+		if (data[i].diagnosis == data[i + 1].diagnosis) {
+			continue;
+		}
+		cout << " | " << data[i].diagnosis;
+	}
+	cout << " |\n=================================================================================================" << endl;
 	SetColor(15, 0);
 
+	
+	
 	while (!exit) {
 		cout << "\n [~] Enter day: ";
 		cin >> day;
@@ -407,7 +432,7 @@ void Sample(Patient* data, int& Size)
 	cout << "\n [~] Enter diagnosis: ";
 	cin >> diagnosis;
 	SetColor(10, 0);
-	cout << "\n==================================" << endl;
+	cout << "\n=================================================================================================" << endl;
 	SetColor(15, 0);
 	for (int i = 0; i < Size; i++)	{
 		if (data[i].day_of_receipt == day && data[i].diagnosis == diagnosis){
@@ -559,7 +584,7 @@ void Serch_in_palata(Patient*& data, Doctor*& doc, int& Size)
 		cout << "==================================\n\n" << endl;
 		SetColor(15, 0);
 
-		cout << " #" << setw(12) << " Name" << setw(11) << "Surname" << setw(13) << "Diagnosis" << setw(12) << "Healing\n";
+		cout << " #" << setw(12) << " Name" << setw(11) << "Surname" << setw(13) << "Diagnosis" << setw(13) << "Healing\n";
 		SetColor(10, 0);
 		cout<<"____________________________________________________\n\n";
 		SetColor(15, 0);
@@ -802,6 +827,7 @@ void Exit(string path, Patient*& data, int& Size, Menu &menu)
 	}
 		writeFile.close();		
 	}
-
+	Sleep(500);
 	menu.endfile();
 }
+
