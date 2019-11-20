@@ -6,7 +6,8 @@
 #include"Doctor_data.h"
 #include"Patient_data.h"
 #include"Menu.h"
-using namespace std;
+using namespace std; 
+
 
 
 void SetColor(int text, int background);
